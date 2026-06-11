@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* === Raleway === */
+@font-face {
+  font-family: 'Raleway';
+  src: url('./assets/Fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./assets/Fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* === Lora === */
+@font-face {
+  font-family: 'lora';
+  src: url('./assets/Fonts/Lora-VariableFont_wght.ttf') format('truetype');
+  /* Regular */
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'lora';
+  src: url('./assets/Fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype');
+  /* Italic */
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Add this theme block to register both fonts with Tailwind */
+@theme {
+  --font-raleway: 'Raleway', sans-serif;
+  --font-lora: 'lora', serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 110vh;
+  display: flex;
+  flex-direction: column;
+}
