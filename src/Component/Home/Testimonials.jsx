@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Quote } from 'lucide-react';
 import logo from '../../assets/logo.png'; // Update path if needed
+import bgImg from '../../assets/home/g3.jpg'; // <-- ADDED: Path to your background image
 
 const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,12 +43,26 @@ const Testimonials = () => {
     };
 
     return (
-        <section className="bg-[#f0f2f5] py-15 px-4 flex justify-center items-center w-full min-h-[700px]">
+        <section className="relative overflow-hidden bg-[#f0f2f5] py-15 px-4 flex justify-center items-center w-full min-h-[700px]">
+            
+            {/* === BACKGROUND IMAGE LAYER === 
+                scale-105 prevents the blur from pulling in the edges.
+                opacity-30 blends it with the light background to make it look "whitewashed".
+            */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <img 
+                    src={bgImg} 
+                    alt="Background" 
+                    className="w-full h-full object-cover opacity-40 blur-[6px] scale-105"
+                />
+            </div>
+
             {/* 
               Inner Container: 
               Matches the exact light grayish-blue background and delicate border.
+              Added z-10 so it sits perfectly above the new background image.
             */}
-            <div className="relative w-full max-w-[900px] px-6 sm:px-16 md:px-24 pt-20 pb-16 mt-16 border-[0.5px] border-transparent [border-image:linear-gradient(to_right,#d9a44c,#2D5D80)_1]">
+            <div className="relative z-10 w-full max-w-[900px] px-6 sm:px-16 md:px-20 pt-20 pb-16 mt-16 border-[0px] border-transparent [border-image:linear-gradient(to_right,#d9a44c,#2D5D80)_1]">
                 {/* 
                   Overlapping Top Logo: 
                   Perfectly centered on the top border line using -translate-y-1/2 
@@ -55,7 +70,7 @@ const Testimonials = () => {
                 <img
                     src={logo}
                     alt="Logo Overlay"
-                    className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 sm:w-[280px] object-contain opacity-20 pointer-events-none"
+                    className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 sm:w-[280px] object-contain opacity-40 pointer-events-none"
                 />
 
                 {/* Delicate Lucide Quote Icon */}
