@@ -42,12 +42,12 @@ const Testimonials = () => {
     };
 
     return (
-        <section className="bg-[#f0f2f5] py-20 px-4 flex justify-center items-center w-full min-h-[700px]">
+        <section className="bg-[#f0f2f5] py-15 px-4 flex justify-center items-center w-full min-h-[700px]">
             {/* 
               Inner Container: 
               Matches the exact light grayish-blue background and delicate border.
             */}
-            <div className="relative w-full max-w-[1000px] border border-gray-200 bg-[#f4f6f8] px-6 sm:px-16 md:px-24 pt-20 pb-16 mt-16">
+            <div className="relative w-full max-w-[900px] border border-gray-300  px-6 sm:px-16 md:px-24 pt-20 pb-16 mt-16">
 
                 {/* 
                   Overlapping Top Logo: 
@@ -85,7 +85,7 @@ const Testimonials = () => {
                                     }`}
                             >
                                 {/* Quote Text - Matches the exact typography and spacing */}
-                                <p className="text-[#2D5D80] font-lora text-xl md:text-[25px] leading-[1.7] text-center mb-6">
+                                <p className="text-[#2D5D80] font-lora text-xl md:text-[25px] leading-[1.5] text-center mb-6">
                                     "{displayText}"
                                 </p>
 

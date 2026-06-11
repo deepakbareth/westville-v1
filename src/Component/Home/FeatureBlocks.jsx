@@ -24,7 +24,7 @@ const FeatureBlocks = () => {
     ];
 
     return (
-        <section className="w-full bg-[#f8f9fa] py-12 md:py-20">
+        <section className="w-full bg-[#f0f2f5] py-12 md:py-10">
             {/* 
               Grid Layout: Centered with max-width, padding on the sides, and a gap between items.
               This perfectly replicates the boxed, separated look from your screenshot.
@@ -69,7 +69,8 @@ const FeatureBlocks = () => {
 
                                         {/* Learn More Link */}
                                         <div className="flex items-center text-[#df9b29] hover:text-[#c48824] transition-colors duration-300 w-fit">
-                                            <span className="uppercase tracking-[0.15em] text-xs  font-['lora'] mr-3 font-[13px]">
+                                            <span
+                                                className="uppercase tracking-[0.15em] text-xs  font-['lora'] mr-3 font-[13px]">
                                                 {feature.linkText}
                                             </span>
                                             <ArrowRightCircle size={18} strokeWidth={1.5} />

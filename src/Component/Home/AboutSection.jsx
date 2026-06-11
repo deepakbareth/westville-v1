@@ -8,7 +8,7 @@ const AboutSection = () => {
     const par2 = "We will also share some of our fun yet secret discoveries so your time visiting this magical place called Provincetown is well spent. You too will discover how and why we've made Westville Cottage our second home — and indeed why it's Provincetown's Best Kept Secret.";
 
     return (
-        <section className="relative w-full bg-[#f4f6f8] py-16 md:py-25 overflow-hidden">
+        <section className="relative w-full bg-[#f4f6f8] py-16 md:py-20 overflow-hidden">
 
             {/* Watermark Logo 
                 Adjusted size and position for mobile (w-[200px]) while keeping desktop (md:w-[350px])
@@ -54,7 +54,7 @@ const AboutSection = () => {
                             West End Provincetown, MA. Our Home Away from Home.
                         </p>
 
-                        <p className="mb-0">
+                        <p className="mb-0 leading-[1.7]">
                             Here we provide you with an intimate guide and tour of our home. We
                             will open our doors to share many details about us and the fully
                             appointed living space you will soon come to enjoy. We will let you in
@@ -65,7 +65,7 @@ const AboutSection = () => {
                         {/* Expandable Paragraph */}
                         <div className={`grid transition-all duration-500 ease-in-out ${isExpanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                             <div className="overflow-hidden">
-                                <p className="pt-2 md:pt-4 mb-0">
+                                <p className="pt-2 md:pt-4 mb-0 leading-[1.7]">
                                     {par2}
                                 </p>
                             </div>
@@ -74,7 +74,7 @@ const AboutSection = () => {
 
                     {/* Read More / Read Less Button */}
                     <button
-                        className="mt-6 text-[#2D5D80] hover:text-[#d9a44c] cursor-pointer font-['Lora',serif] uppercase tracking-[0.15em] text-[13px] md:text-[14px] flex items-center gap-2 transition-colors duration-300"
+                        className="mt-6 text-[#3C3C3C] hover:text-[#d9a44c] cursor-pointer font-['Lora',serif] uppercase tracking-[0.15em] text-[13px] md:text-[13px] font-normal flex items-center gap-2 transition-colors duration-300"
                         onClick={() => setIsExpanded(!isExpanded)}
                     >
                         {isExpanded ? "READ LESS" : "READ MORE"}

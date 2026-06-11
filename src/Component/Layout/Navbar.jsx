@@ -94,7 +94,7 @@ const Navbar = () => {
                             }`}
                     >
                         {/* Top Row: Call, Logo, Button */}
-                        <div className="flex justify-between items-center w-full px-30">
+                        <div className="flex justify-between items-center w-full px-20">
                             {/* Left: Contact Info */}
                             <div className="flex flex-col text-sm tracking-widest w-1/3 mt-3">
                                 <div className="text-white mb-1 text-[15px] font-['lora']">CALL:</div>
@@ -106,13 +106,13 @@ const Navbar = () => {
                                 <img
                                     src={logo}
                                     alt="Westville Cottage"
-                                    className="h-30 w-auto object-contain"
+                                    className="h-25 w-auto object-contain"
                                 />
                             </div>
 
                             {/* Right: CTA Button */}
                             <div className="w-1/3 flex justify-end mt-2">
-                                <button className="bg-[#df9b29] hover:bg-[#c48824] text-black font-semibold font-['Lora'] text-[15px] px-8 py-3 tracking-widest transition-colors duration-300">
+                                <button className="bg-[#df9b29] hover:bg-[#c48824] text-black font-semibold font-['Lora'] text-[13px] px-13 py-4 tracking-widest transition-colors duration-300">
                                     BOOK NOW
                                 </button>
                             </div>
@@ -166,7 +166,7 @@ const Navbar = () => {
                         </div>
 
                         {/* Right: CTA Button */}
-                        <button className="bg-[#df9b29] hover:bg-[#c48824] text-black font-semibold font-['Lora'] text-[15px] px-8 py-3 tracking-widest transition-colors duration-300">
+                        <button className="bg-[#df9b29] hover:bg-[#c48824] text-black font-semibold font-['Lora'] text-[13px] px-13 py-4 tracking-widest transition-colors duration-300">
                             BOOK NOW
                         </button>
                     </div>
@@ -200,7 +200,7 @@ const Navbar = () => {
 
                 {/* Full Width Book Now Button perfectly anchored at the bottom */}
                 <div className="w-full bg-[#df9b29]">
-                    <button className="w-full py-5 text-black font-semibold font-['Lora'] text-[15px] tracking-widest hover:bg-[#c48824] transition-colors">
+                    <button className="w-full py-5 text-black font-semibold font-['Lora'] text-[13px] tracking-widest hover:bg-[#c48824] transition-colors">
                         BOOK NOW
                     </button>
                 </div>

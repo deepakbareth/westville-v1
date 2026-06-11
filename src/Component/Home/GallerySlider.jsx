@@ -60,10 +60,10 @@ const GallerySlider = () => {
     };
 
     return (
-        <section className="w-full bg-[#f4f6f8] py-20 overflow-hidden">
+        <section className="w-full bg-[#f0f2f5] py-10 overflow-hidden">
 
             {/* Header Section */}
-            <div className="text-center mb-10 md:mb-12">
+            <div className="text-center mb-5 md:mb-5">
                 <p className="text-[12px] md:text-[13px] font-bold tracking-[0.2em] uppercase font-['Raleway',sans-serif] text-gray-900 mb-4">
                     PHOTOS
                 </p>

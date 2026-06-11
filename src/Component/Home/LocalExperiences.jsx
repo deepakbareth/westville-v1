@@ -32,10 +32,10 @@ const LocalExperiences = () => {
     ];
 
     return (
-        <section className="w-full bg-[#f8f9fa] py-20 md:py-24">
+        <section className="w-full bg-[#f0f2f5] py-20 md:py-24">
 
             {/* Top Header Section */}
-            <div className="text-center mb-12 md:mb-16">
+            <div className="text-center mb-5 md:mb-7">
                 <p className="text-[13px] md:text-[14px] font-bold tracking-[4px] uppercase font-['Raleway',sans-serif] text-gray-900 mb-4">
                     EXPLORE
                 </p>

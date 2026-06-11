@@ -17,7 +17,7 @@ const CottageDetails = () => {
 
             {/* Left Side: Image container */}
             {/* FIX 2: Changed md:h-auto to md:h-full to ensure perfect vertical centering on desktop */}
-            <div className="w-full md:w-[70%] h-72 sm:h-80 md:h-full flex items-center justify-center">
+            <div className="w-full md:w-[65%] h-72 sm:h-80 md:h-full flex items-center justify-center">
                 <img
                     src={img}
                     alt="Westville Cottage Bedroom"
