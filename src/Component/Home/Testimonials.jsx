@@ -47,8 +47,7 @@ const Testimonials = () => {
               Inner Container: 
               Matches the exact light grayish-blue background and delicate border.
             */}
-            <div className="relative w-full max-w-[900px] border border-gray-300  px-6 sm:px-16 md:px-24 pt-20 pb-16 mt-16">
-
+            <div className="relative w-full max-w-[900px] px-6 sm:px-16 md:px-24 pt-20 pb-16 mt-16 border-[0.5px] border-transparent [border-image:linear-gradient(to_right,#d9a44c,#2D5D80)_1]">
                 {/* 
                   Overlapping Top Logo: 
                   Perfectly centered on the top border line using -translate-y-1/2 

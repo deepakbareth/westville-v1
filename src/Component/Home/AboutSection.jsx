@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // Update this path to match your actual asset directory
 import logo from '../../assets/logo.png';
+import logo2 from '../../assets/logo2.png';
 
 const AboutSection = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -14,9 +15,9 @@ const AboutSection = () => {
                 Adjusted size and position for mobile (w-[200px]) while keeping desktop (md:w-[350px])
             */}
             <img
-                src={logo}
+                src={logo2}
                 alt=""
-                className="absolute left-[-15%] md:left-[5%] top-1/2 -translate-y-1/2 rotate-90 w-[200px] md:w-[350px] opacity-[0.06] pointer-events-none object-contain"
+                className="hidden md:block absolute left-[-15%] md:left-[5%] top-1/2 -translate-y-1/2 rotate-90 w-[200px] md:w-[350px] opacity-[0.1] pointer-events-none object-contain"
             />
 
             {/* Main Content Container */}
@@ -33,7 +34,7 @@ const AboutSection = () => {
                         <img
                             src={logo}
                             alt="Key Icon"
-                            className="w-10 md:w-16 h-auto object-contain"
+                            className="w-10 md:w-32 h-auto object-contain"
                         />
                         {/* Gold Accent Line */}
                         <div className="w-6 md:w-12 h-[2px] bg-[#d9a44c]"></div>

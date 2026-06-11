@@ -3,17 +3,27 @@ import React from 'react';
 // Update these paths to match your actual asset directory
 import logo from '../../assets/logo.png'
 import premiumLogo from '../../assets/pbw_logo.png';
+import footerBg from '../../assets/footerbg.png'; // Add your background image path here
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-white font-['Raleway',sans-serif]">
+        <footer className="relative w-full font-['Raleway',sans-serif] bg-[#0a0a0a] overflow-hidden">
 
-            {/* === TOP BAR === 
-                Matches the pre-footer top bar in the design with left links and right social icons.
+            {/* === ENTIRE FOOTER BACKGROUND IMAGE === 
+                Scale-105 prevents the blur effect from creating faded edges.
             */}
-            <div className="w-full border-b border-t border-gray-200">
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <img
+                    src={footerBg}
+                    alt="Footer Background"
+                    className="w-full h-full object-cover opacity-40 blur-[5px] scale-105"
+                />
+            </div>
+
+            {/* === TOP BAR === */}
+            <div className="relative z-10 w-full border-b border-t border-white/10">
                 <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-16 py-4 md:py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-                    <div className="flex gap-6 md:gap-8 text-[#3a4a5d] text-[14px] md:text-[15px] font-medium">
+                    <div className="flex gap-6 md:gap-8 text-white text-[14px] md:text-[15px] font-medium">
                         <a href="#email" className="hover:text-[#c38b31] transition-colors">Email Offers</a>
                         <a href="#location" className="hover:text-[#c38b31] transition-colors">Location & Contact</a>
                     </div>
@@ -34,18 +44,16 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* === MAIN FOOTER CONTENT === 
-                3-Column grid on desktop, stacking on mobile.
-            */}
-            <div className="max-w-[1400px] mx-auto px-6 lg:px-16 py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 lg:gap-8">
+            {/* === MAIN FOOTER CONTENT === */}
+            <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-16 py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 lg:gap-8">
 
                 {/* Left Column: Contact Info */}
                 <div className="flex flex-col text-center md:text-left items-center md:items-start">
-                    <h3 className="text-[#2D5D80] font-['Lora',serif] text-[20px] md:text-[24px] uppercase tracking-wide mb-4 md:mb-6">
+                    <h3 className="text-[#df9b29] font-['Lora',serif] text-[20px] md:text-[24px] uppercase tracking-wide mb-4 md:mb-6">
                         WESTVILLE COTTAGE
                     </h3>
 
-                    <div className="flex flex-col gap-4 text-[15px] md:text-[16px] text-gray-700 leading-relaxed">
+                    <div className="flex flex-col gap-4 text-[15px] md:text-[16px] text-gray-200 leading-relaxed">
                         {/* Address / Serving Info */}
                         <div className="flex items-start justify-center md:justify-start gap-3 md:gap-4">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#c38b31] w-[20px] h-[20px] md:w-[22px] md:h-[22px] mt-1 shrink-0">
@@ -86,23 +94,23 @@ const Footer = () => {
                         <img
                             src={logo}
                             alt="Westville Cottage Logo"
-                            className="w-[200px] md:w-[260px] object-contain"
+                            className="w-[200px] md:w-[260px] object-contain brightness-0 invert opacity-90"
                         />
                     </a>
                 </div>
 
                 {/* Right Column: FAQ / CTA */}
                 <div className="flex flex-col text-center lg:text-left items-center lg:items-start lg:pl-16">
-                    <h3 className="text-[#2D5D80] font-['Lora',serif] text-[20px] md:text-[24px] uppercase tracking-wide mb-4 md:mb-6">
+                    <h3 className="text-[#df9b29] font-['Lora',serif] text-[20px] md:text-[24px] uppercase tracking-wide mb-4 md:mb-6">
                         FREQUENTLY ASKED QUESTIONS
                     </h3>
-                    <p className="text-[15px] md:text-[16px] text-gray-700 leading-relaxed mb-6 md:mb-8 max-w-[300px] mx-auto lg:mx-0">
+                    <p className="text-[15px] md:text-[16px] text-gray-200 leading-relaxed mb-6 md:mb-8 max-w-[300px] mx-auto lg:mx-0">
                         Have questions? We’ve got the answers right here.
                     </p>
                     <div>
                         <a
                             href="#"
-                            className="inline-block bg-[#c38b31] hover:bg-[#a87b4f] text-black font-semibold text-[13px] px-8 py-3.5 tracking-[0.05em] uppercase transition-all duration-300 transform hover:-translate-y-1 shadow-sm rounded-sm"
+                            className="inline-block bg-[#df9b29] hover:bg-[#c48824] text-black font-semibold text-[13px] px-8 py-3.5 tracking-[0.05em] uppercase transition-all duration-300 transform hover:-translate-y-1 shadow-sm rounded-sm"
                         >
                             HELP & FAQ
                         </a>
@@ -111,11 +119,9 @@ const Footer = () => {
 
             </div>
 
-            {/* === BOTTOM BAR === 
-                Subtle gradient background matching the design, centered links, copyright, and powered by.
-            */}
-            <div className="w-full bg-gradient-to-b from-white to-gray-100 border-t border-gray-200 py-8 px-4">
-                <div className="max-w-[1000px] mx-auto flex flex-col items-center justify-center text-center gap-4 md:gap-5 text-[13px] md:text-[14px] text-gray-600">
+            {/* === BOTTOM BAR === */}
+            <div className="relative z-10 w-full border-t border-white/10 py-8 px-4">
+                <div className="max-w-[1000px] mx-auto flex flex-col items-center justify-center text-center gap-4 md:gap-5 text-[13px] md:text-[14px] text-gray-300">
 
                     {/* Bottom Links */}
                     <div className="flex flex-wrap justify-center gap-x-6 md:gap-x-8 gap-y-2 md:gap-y-3">
