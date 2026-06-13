@@ -17,7 +17,7 @@ const AboutSection = () => {
             <img
                 src={logo2}
                 alt=""
-                className="hidden md:block absolute left-[-15%] md:left-[5%] top-1/2 -translate-y-1/2 rotate-90 w-[200px] md:w-[350px] opacity-[0.1] pointer-events-none object-contain"
+                className="hidden md:block absolute left-[-15%] md:left-[5%] top-1/2 -translate-y-1/2 rotate-90 w-[200px] md:w-[350px] opacity-[0.12] pointer-events-none object-contain"
             />
 
             {/* Main Content Container */}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // <-- Added Link import
 import logo from '../../assets/logo.png'
 
 const Navbar = () => {
@@ -16,14 +17,15 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Content pulled precisely from your code
+    // Content pulled precisely from your code, now with paths
+    // Remove the "#" and add real paths (e.g., "/hosts") when pages are ready
     const navLinks = [
-        "HOME",
-        "YOUR HOSTS",
-        "PROPERTY",
-        "GALLERY",
-        "P-TOWN",
-        "PETS"
+        { name: "HOME", path: "/westville-v1/" },
+        { name: "YOUR HOSTS", path: "/westville-v1/your-hosts" },
+        { name: "PROPERTY", path: "#" },
+        { name: "GALLERY", path: "#" },
+        { name: "P-TOWN", path: "#" },
+        { name: "PETS", path: "#" }
     ];
 
     return (
@@ -53,11 +55,13 @@ const Navbar = () => {
                         </a>
 
                         {/* Center: Logo */}
-                        <img
-                            src={logo}
-                            alt="Westville Cottage"
-                            className="h-12 w-auto object-contain"
-                        />
+                        <a href="/westville-v1/">
+                            <img
+                                src={logo}
+                                alt="Westville Cottage"
+                                className="h-12 w-auto object-contain"
+                            />
+                        </a>
 
                         {/* Right: Hamburger / Close Toggle */}
                         <button
@@ -103,12 +107,13 @@ const Navbar = () => {
 
                             {/* Center: Logo Placeholder */}
                             <div className="flex flex-col items-center justify-center w-1/3">
-                                <img
-                                    src={logo}
-                                    alt="Westville Cottage"
-                                    className="h-25 w-auto object-contain"
-                                />
-                            </div>
+                                <a href="/westville-v1/">
+                                    <img
+                                        src={logo}
+                                        alt="Westville Cottage"
+                                        className="h-25 w-auto object-contain"
+                                    />
+                                </a></div>
 
                             {/* Right: CTA Button */}
                             <div className="w-1/3 flex justify-end mt-2">
@@ -124,13 +129,13 @@ const Navbar = () => {
                         {/* Bottom Row: Navigation Links */}
                         <div className="flex justify-evenly space-x-12 ">
                             {navLinks.map((link, idx) => (
-                                <a
+                                <Link
                                     key={idx}
-                                    href={`#${link.toLowerCase().replace(' ', '-')}`}
+                                    to={link.path}
                                     className="text-[13px] hover:text-[#df9b29]  font-raleway"
                                 >
-                                    {link}
-                                </a>
+                                    {link.name}
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -145,23 +150,25 @@ const Navbar = () => {
                     >
                         {/* Left: Logo */}
                         <div className="flex items-center cursor-pointer">
-                            <img
-                                src={logo}
-                                alt="Westville Cottage"
-                                className="h-24 w-auto object-contain"
-                            />
+                            <a href="/westville-v1/">
+                                <img
+                                    src={logo}
+                                    alt="Westville Cottage"
+                                    className="h-24 w-auto object-contain"
+                                />
+                            </a>
                         </div>
 
                         {/* Center: Links */}
                         <div className="flex items-center space-x-8">
                             {navLinks.map((link, idx) => (
-                                <a
+                                <Link
                                     key={idx}
-                                    href={`#${link.toLowerCase().replace(' ', '-')}`}
+                                    to={link.path}
                                     className="text-[13px] font-bold font-raleway tracking-widest text-[#2c3e50] hover:text-[#df9b29] transition-colors"
                                 >
-                                    {link}
-                                </a>
+                                    {link.name}
+                                </Link>
                             ))}
                         </div>
 
@@ -187,14 +194,14 @@ const Navbar = () => {
                 {/* Links list area (scrollable if screen is very short) */}
                 <div className="flex flex-col flex-grow px-6 pt-4 overflow-y-auto">
                     {navLinks.map((link, idx) => (
-                        <a
+                        <Link
                             key={idx}
-                            href={`#${link.toLowerCase().replace(' ', '-')}`}
+                            to={link.path}
                             onClick={() => setIsMobileMenuOpen(false)} // Close menu on click
                             className="text-[13px] font-semibold font-raleway tracking-[0.15em] text-[#1c2c3e] py-5 border-b border-gray-200"
                         >
-                            {link}
-                        </a>
+                            {link.name}
+                        </Link>
                     ))}
                 </div>
 
