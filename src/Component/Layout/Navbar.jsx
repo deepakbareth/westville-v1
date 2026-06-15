@@ -22,7 +22,7 @@ const Navbar = () => {
     const navLinks = [
         { name: "HOME", path: "/westville-v1/" },
         { name: "YOUR HOSTS", path: "/westville-v1/your-hosts" },
-        { name: "PROPERTY", path: "#" },
+        { name: "THE COTTAGE", path: "/westville-v1/the-cottage" },
         { name: "GALLERY", path: "#" },
         { name: "P-TOWN", path: "#" },
         { name: "PETS", path: "#" }

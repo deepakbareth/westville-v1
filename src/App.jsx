@@ -5,7 +5,7 @@ import './App.css'
 import YourHost from './Pages/YourHost'
 import Navbar from './Component/Layout/Navbar'
 import Footer from './Component/Layout/Footer'
-
+import Property from './Pages/Property'
 // Layouts and Pages import karein (path apne hisaab se adjust kar lena)
 import ProvincetownPage from './Pages/ProvincetownPage'
 import PTownLayout from './Component/Layout/PTownLayout' // <-- Aapka naya Layout import karein
@@ -25,6 +25,7 @@ function App() {
         {/* Normal Routes */}
         <Route path="/westville-v1/" element={<Home />} />
         <Route path="/westville-v1/your-hosts" element={<YourHost />} />
+        <Route path="/westville-v1/the-cottage" element={<Property />} />
 
         {/* === NESTED ROUTES FOR P-TOWN === */}
         {/* Parent Route me PTownLayout lagaya */}
