@@ -21,7 +21,7 @@ const PageBanner = ({ title = "Your Page", bgImage = bannebg }) => {
             <div className="relative z-10 text-center px-6 flex flex-col items-center pt-10 md:pt-20">
 
                 {/* Sirf Ek Heading */}
-                <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-normal font-['Lora',serif] tracking-[0.1em] uppercase drop-shadow-md">
+                <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-normal font-helvetica tracking-[0.1em] uppercase drop-shadow-md">
                     {title}
                 </h1>
 

@@ -56,14 +56,14 @@ const FeatureBlocks = () => {
                             <div className="relative transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
 
                                 {/* Title */}
-                                <h2 className="text-white text-[22px] md:text-[26px] font-lora tracking-wide pr-14 mb-4">
+                                <h2 className="text-white text-[22px] md:text-[26px] font-helvetica tracking-wide pr-14 mb-4">
                                     {feature.title}
                                 </h2>
 
                                 {/* Description & Button wrapper (Expands on hover) */}
                                 <div className="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out">
                                     <div className="overflow-hidden">
-                                        <p className="text-gray-300 font-['Raleway',sans-serif] font-light text-sm md:text-[15px] leading-relaxed mb-8 max-w-[95%]">
+                                        <p className="text-gray-300 font-helvetica font-light text-sm md:text-[15px] leading-relaxed mb-8 max-w-[95%]">
                                             {feature.description}
                                         </p>
 

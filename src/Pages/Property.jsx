@@ -26,7 +26,7 @@ function Property() {
     return (
         <div className="bg-white min-h-screen text-gray-800">
             {/* Banner & Sub-Navbar */}
-            <PageBanner title="The Property" />
+            <PageBanner title="The Cottage" />
             <SubNavbar />
 
             {/* Main content grid */}
@@ -57,7 +57,7 @@ function Property() {
                     </div>
 
                     {/* Right Column (Sticky Sidebar Inquiry Form) */}
-                    <div className="lg:col-span-1 lg:sticky lg:top-45 z-30">
+                    <div className="lg:col-span-1 lg:sticky lg:top-42 z-30">
                         <BookingForm />
                     </div>
 

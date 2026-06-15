@@ -39,7 +39,7 @@ const LocalExperiences = () => {
                 <p className="text-[13px] md:text-[14px] font-bold tracking-[4px] uppercase font-['Raleway',sans-serif] text-gray-900 mb-4">
                     EXPLORE
                 </p>
-                <h2 className="text-[30px] md:text-[40px] font-['Lora',serif] text-[#2D5D80] font-normal">
+                <h2 className="text-[30px] md:text-[40px] font-helveti text-[#2D5D80] font-normal">
                     LOCAL EXPERIENCES
                 </h2>
             </div>
@@ -74,14 +74,14 @@ const LocalExperiences = () => {
                             {/* Animated Text Wrapper */}
                             <div className="relative transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
 
-                                <h3 className="text-white text-[22px] md:text-[24px] font-['Lora',serif] tracking-wide pr-10 mb-4">
+                                <h3 className="text-white text-[22px] md:text-[24px] font-helvetica tracking-wide pr-10 mb-4">
                                     {exp.title}
                                 </h3>
 
                                 {/* Expandable Description & Link */}
                                 <div className="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out">
                                     <div className="overflow-hidden">
-                                        <p className="text-gray-300 font-['Raleway',sans-serif] font-light text-sm md:text-[15px] leading-relaxed mb-8 pr-4">
+                                        <p className="text-gray-300 font-helvetica font-light text-sm md:text-[15px] leading-relaxed mb-8 pr-4">
                                             {exp.description}
                                         </p>
 

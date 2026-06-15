@@ -35,7 +35,7 @@ const Rates = () => {
 
                     {/* Desktop Header: Hidden on mobile (hidden md:table-header-group) */}
                     <thead className="hidden md:table-header-group">
-                        <tr className="bg-[#f8f9fa] border-b border-gray-200 text-gray-700 font-['Raleway',sans-serif] text-[13px] md:text-[14px] font-bold">
+                        <tr className="bg-[#f8f9fa] border-b border-gray-200 text-gray-700 font-helvetica text-[13px] md:text-[14px] font-bold">
                             <th className="py-4 px-6">Season / Period</th>
                             <th className="py-4 px-6 text-right">Per Week</th>
                             <th className="py-4 px-6 text-right">Per Night (Min 3 Nights)</th>
@@ -43,7 +43,7 @@ const Rates = () => {
                         </tr>
                     </thead>
 
-                    <tbody className="block md:table-row-group font-['Raleway',sans-serif] text-[13px] md:text-[15px] text-gray-600">
+                    <tbody className="block md:table-row-group font-helvetica text-[13px] md:text-[15px] text-gray-600">
                         {rateList.map((rate, idx) => (
                             // On mobile: acts as a flex-column card (block md:table-row). Adds bottom border between cards.
                             <tr

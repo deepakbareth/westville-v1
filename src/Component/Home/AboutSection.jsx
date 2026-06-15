@@ -45,12 +45,12 @@ const AboutSection = () => {
                     </div>
 
                     {/* Main Heading */}
-                    <h2 className="font-['Lora',serif] text-[#2D5D80] text-[26px] md:text-[35px] mb-4 md:mb-6 font-normal leading-tight ">
+                    <h2 className="text-[#2D5D80] font-Helvetica text-[25px] md:text-[35px] font-normal mb-2 leading-tight">
                         A LUXURY VACATION COTTAGE RENTAL
                     </h2>
 
                     {/* Paragraph Content */}
-                    <div className="font-['Raleway',sans-serif] text-gray-800 font-normal leading-[1.8] md:leading-[2.2] text-[15px] md:text-[17px]">
+                    <div className="font-helvetica text-gray-800 font-normal leading-[1.8] md:leading-[2.2] text-[15px] md:text-[17px]">
                         <p className="mb-4 md:mb-0">
                             West End Provincetown, MA. Our Home Away from Home.
                         </p>

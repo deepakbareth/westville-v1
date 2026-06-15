@@ -7,10 +7,10 @@ const SubNavbar = () => {
     // Exact links from your design image
 
     const subLinks = [
-        { name: "OVERVIEW", path: "/westville-v1/property#overview" },
-        { name: "RATES", path: "/westville-v1/property#rates" },
-        { name: "AMENITIES", path: "/westville-v1/property#amenities" },
-        { name: "AVAILABILITY", path: "/westville-v1/property#availability" }
+        { name: "OVERVIEW", path: "/westville-v1/the-cottage#overview" },
+        { name: "RATES", path: "/westville-v1/the-cottage#rates" },
+        { name: "AMENITIES", path: "/westville-v1/the-cottage#amenities" },
+        { name: "AVAILABILITY", path: "/westville-v1/the-cottage#availability" }
     ];
 
 

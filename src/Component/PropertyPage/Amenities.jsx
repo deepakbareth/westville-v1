@@ -94,13 +94,13 @@ const Amenities = () => {
                         {/* Category Title */}
                         <div className="flex items-center gap-3 border-b border-gray-200 pb-3 mb-4">
                             {category.icon}
-                            <h3 className="text-[#2D5D80] font-['Raleway',sans-serif] text-[16px] md:text-[18px] tracking-wide font-normal">
+                            <h3 className="text-[#2D5D80] font-helvetica text-[16px] md:text-[18px] tracking-wide font-normal">
                                 {category.title}
                             </h3>
                         </div>
 
                         {/* Items List */}
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-2 text-gray-700 font-['Raleway',sans-serif] text-[13px] md:text-[14px]">
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-2 text-gray-700 font-helvetica text-[13px] md:text-[14px]">
                             {category.items.map((item, itemIdx) => (
                                 <li key={itemIdx} className="flex items-start gap-2">
                                     <Check className="text-[#df9b29] shrink-0 mt-[1px]" size={16} strokeWidth={3} />
@@ -116,10 +116,10 @@ const Amenities = () => {
             <div className="space-y-6 pt-6">
                 {additionalInfo.map((info, idx) => (
                     <div key={idx} className="border-b border-gray-200 pb-4">
-                        <h3 className="text-[#2D5D80] font-['Raleway',sans-serif] text-[16px] md:text-[18px] tracking-wide font-normal mb-3">
+                        <h3 className="text-[#2D5D80] font-helvetica text-[16px] md:text-[18px] tracking-wide font-normal mb-3">
                             {info.title}
                         </h3>
-                        <p className="font-['Raleway',sans-serif] text-[14px] md:text-[15px] text-gray-700">
+                        <p className="font-helvetica text-[14px] md:text-[15px] text-gray-700">
                             {info.content}
                         </p>
                     </div>

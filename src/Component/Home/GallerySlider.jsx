@@ -14,7 +14,7 @@ const GallerySlider = () => {
 
     // Auto-slide logic
     useEffect(() => {
-        if (isHovered) return;
+        // if (isHovered) return;
 
         const timer = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -67,7 +67,7 @@ const GallerySlider = () => {
                 <p className="text-[12px] md:text-[13px] font-bold tracking-[0.2em] uppercase font-['Raleway',sans-serif] text-gray-900 mb-4">
                     PHOTOS
                 </p>
-                <h2 className="text-[30px] md:text-[40px] font-['Lora',serif] text-[#2D5D80] font-normal">
+                <h2 className="text-[30px] md:text-[40px] font-helveti text-[#2D5D80] font-normal">
                     FROM OUR GALLERY
                 </h2>
             </div>

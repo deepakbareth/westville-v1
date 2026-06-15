@@ -39,7 +39,7 @@ const Host = () => {
                 <div className="w-full md:w-1/2 flex flex-col items-start text-left">
 
 
-                    <div className="font-['Raleway',sans-serif] text-gray-700 leading-[1.8] text-[15px] md:text-[15px] space-y-5">
+                    <div className="font-helvetica text-gray-700 leading-[1.8] text-[15px] md:text-[15px] space-y-5">
 
                         <Paragraph color='gray-700' text={"Paul and Dominic met in Connecticut in the Fall of 1995. We have been inseparable ever since. Having to coerce Paul into taking vacations, as it was never a favorite pastime of his, was the most intensive challenge. Our first vacation together was to Provincetown for one week in the summer of 1996. Steamer trunks, bicycles, and the likes in a little Mitsubishi Eclipse, we were off to discover a place like none other... Provincetown."} />
                         <p>

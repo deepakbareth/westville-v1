@@ -7,7 +7,7 @@ import footerBg from '../../assets/footerbg.png'; // Add your background image p
 
 const Footer = () => {
     return (
-        <footer className="relative w-full font-['Raleway',sans-serif] bg-[#0a0a0a] overflow-hidden">
+        <footer className="relative w-full font-helvetica bg-[#0a0a0a] overflow-hidden">
 
             {/* === ENTIRE FOOTER BACKGROUND IMAGE === 
                 Scale-105 prevents the blur effect from creating faded edges.
@@ -49,7 +49,7 @@ const Footer = () => {
 
                 {/* Left Column: Contact Info */}
                 <div className="flex flex-col text-center md:text-left items-center md:items-start">
-                    <h3 className="text-[#df9b29] font-['Lora',serif] text-[20px] md:text-[24px] uppercase tracking-wide mb-4 md:mb-6">
+                    <h3 className="text-[#df9b29] font-helvetica text-[20px] md:text-[24px] uppercase tracking-wide mb-4 md:mb-6">
                         WESTVILLE COTTAGE
                     </h3>
 
@@ -101,7 +101,7 @@ const Footer = () => {
 
                 {/* Right Column: FAQ / CTA */}
                 <div className="flex flex-col text-center lg:text-left items-center lg:items-start lg:pl-16">
-                    <h3 className="text-[#df9b29] font-['Lora',serif] text-[20px] md:text-[24px] uppercase tracking-wide mb-4 md:mb-6">
+                    <h3 className="text-[#df9b29] font-helvetica text-[20px] md:text-[24px] uppercase tracking-wide mb-4 md:mb-6">
                         FREQUENTLY ASKED QUESTIONS
                     </h3>
                     <p className="text-[15px] md:text-[16px] text-gray-200 leading-relaxed mb-6 md:mb-8 max-w-[300px] mx-auto lg:mx-0">

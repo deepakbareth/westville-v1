@@ -38,7 +38,7 @@ const WestvilleCottage = () => {
                     </p>
 
                     {/* Main Heading */}
-                    <h2 className="font-['Lora',serif] text-[#2D5D80] text-[22px] sm:text-[18px] md:text-[20px] mb-2 md:mb-2 font-normal leading-snug md:leading-tight uppercase text-center px-4">
+                    <h2 className="font-helvetica text-[#2D5D80] text-[22px] sm:text-[18px] md:text-[20px] mb-2 md:mb-2 font-normal leading-snug md:leading-tight uppercase text-center px-4">
                         A luxury Vacation Rental
                     </h2>
 

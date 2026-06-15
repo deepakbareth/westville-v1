@@ -5,10 +5,10 @@ const PoliciesAndFees = () => {
     return (
         <section className="w-full bg-white py-12 md:py-20">
             <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
 
                     {/* === LEFT COLUMN === */}
-                    <div className="border-l-[3px] border-[#1f2937] pl-6 md:pl-8 py-2 flex flex-col space-y-4 font-['Raleway',sans-serif] text-[15px] text-gray-800">
+                    <div className="border-l-[3px] border-[#1f2937] pl-6 md:pl-8 py-2 flex flex-col space-y-4 font-helvetica text-[15px] text-gray-800">
 
                         <h2 className="text-[24px] md:text-[28px] text-[#1f2937] mb-2 font-normal leading-snug">
                             Applicable Taxes, Fees &<br />Insurance
@@ -59,7 +59,7 @@ const PoliciesAndFees = () => {
                     </div>
 
                     {/* === RIGHT COLUMN === */}
-                    <div className="border-l-[3px] border-[#1f2937] pl-6 md:pl-8 py-2 flex flex-col space-y-4 font-['Raleway',sans-serif] text-[15px] text-gray-800">
+                    <div className="border-l-[3px] border-[#1f2937] pl-6 md:pl-8 py-2 flex flex-col space-y-4 font-helvetica text-[15px] text-gray-800">
 
                         <h2 className="text-[24px] md:text-[28px] text-[#1f2937] mb-2 font-normal">
                             Payments & Deposits

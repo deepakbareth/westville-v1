@@ -31,12 +31,12 @@ const CottageDetails = () => {
             <div className="w-full md:w-1/2 p-5 md:p-10 lg:p-12 flex flex-col justify-center">
 
                 {/* Title */}
-                <h2 className="text-3xl md:text-[35px] font-['lora','serif'] mb-6 tracking-wide text-white">
+                <h2 className="text-3xl md:text-[35px] font-helvetica mb-6 tracking-wide text-white">
                     WESTVILLE COTTAGE
                 </h2>
 
                 {/* Description Text */}
-                <p className="text-gray-300 font-normal font-raleway leading-relaxed mb-10 text-[15px] ">
+                <p className="text-gray-300 font-normal font-helvetica leading-relaxed mb-10 text-[16px] ">
                     Thank you for your interest in the Westville Cottage! The true spirit of Old
                     Cape Cod has been preserved in this unique property, originally built in
                     1839, which was meticulously designed and restored in 2002 and
