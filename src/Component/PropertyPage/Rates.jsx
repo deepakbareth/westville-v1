@@ -22,12 +22,15 @@ const Rates = () => {
     ];
 
     return (
-        <section className="scroll-mt-45 space-y-8" id='rates'>
+        <section className="scroll-mt-45 space-y-6" id="rates">
+            {/* Standardized Header */}
             <div>
-                <h2 className="text-[#2D5D80] font-Helvetica text-[25px] md:text-[35px] font-normal mb-6 leading-tight">
+                <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#df9b29] block mb-2 font-raleway">
+                    Pricing
+                </span>
+                <h2 className="text-[#2D5D80] font-helvetica text-[28px] md:text-[36px] font-normal mb-4 leading-tight">
                     Rates & Policies
                 </h2>
-
             </div>
             {/* Rates Table Container */}
             <div className="border border-gray-200 rounded-xl overflow-hidden shadow-sm">
@@ -35,7 +38,7 @@ const Rates = () => {
 
                     {/* Desktop Header: Hidden on mobile (hidden md:table-header-group) */}
                     <thead className="hidden md:table-header-group">
-                        <tr className="bg-[#f8f9fa] border-b border-gray-200 text-gray-700 font-helvetica text-[13px] md:text-[14px] font-bold">
+                        <tr className="bg-[#f8f9fa] border-b border-gray-900 text-gray-700 font-helvetica text-[13px] md:text-[18px] font-bold">
                             <th className="py-4 px-6">Season / Period</th>
                             <th className="py-4 px-6 text-right">Per Week</th>
                             <th className="py-4 px-6 text-right">Per Night (Min 3 Nights)</th>
@@ -53,7 +56,7 @@ const Rates = () => {
                                 {/* Column 1: Season */}
                                 {/* flex justify-between pushes label to left and value to right on mobile */}
                                 <td className="flex justify-between items-center md:table-cell py-3 md:py-4 md:px-6 font-semibold text-gray-800 border-b border-gray-100 md:border-none">
-                                    <span className="md:hidden font-bold text-gray-500 uppercase text-[11px] tracking-wider">Season / Period</span>
+                                    <span className="md:hidden font-bold text-gray-500 uppercase text-[15px] tracking-wider">Season / Period</span>
                                     <span className="text-right md:text-left">{rate.season}</span>
                                 </td>
 
@@ -70,7 +73,7 @@ const Rates = () => {
                                 </td>
 
                                 {/* Column 4: Events */}
-                                <td className="flex justify-between items-center md:table-cell py-3 md:py-4 md:px-6 text-sm ">
+                                <td className="flex justify-between items-center font-bold md:table-cell py-3 md:py-4 md:px-6 text-[15px] ">
                                     <span className="md:hidden font-bold text-gray-500 font-sans not-italic uppercase text-[11px] tracking-wider">Events</span>
                                     <span className="text-right md:text-left">{rate.holiday}</span>
                                 </td>

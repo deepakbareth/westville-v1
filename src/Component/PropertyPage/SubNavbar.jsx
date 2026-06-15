@@ -29,7 +29,7 @@ const SubNavbar = () => {
                             to={link.path}
                             // pb-1.5 creates the exact gap between the text and the line
                             // border-b-[3px] creates the thick underline
-                            className={`text-[12px] md:text-[13px] font-bold font-['Raleway',sans-serif] tracking-wider uppercase transition-all duration-300 pb-1 border-b-[5px] ${isActive
+                            className={`text-[12px] md:text-[13px] font-bold font-raleway tracking-wider uppercase transition-all duration-300 pb-1 border-b-[5px] ${isActive
                                 ? "border-[#df9b29] text-white" // Gold underline and white text for active
                                 : "border-transparent text-white hover:text-[#df9b29]" // Transparent border and white text for inactive
                                 }`}

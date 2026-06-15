@@ -334,11 +334,11 @@ const AvailabilityCalendar = () => {
 
         return (
             <div key={`${year}-${monthIndex}`} className="bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.05)] overflow-hidden w-full max-w-[300px] border border-gray-100">
-                <div className="bg-[#2a3b4c] text-white text-center py-2.5 font-semibold text-[15px] mx-3 mt-3 rounded-md">
+                <div className="bg-[#2D5D80] text-white text-center py-2.5 font-semibold text-[15px] mx-3 mt-3 rounded-md font-helvetica">
                     {monthName}, {year}
                 </div>
 
-                <div className="p-4">
+                <div className="p-4 font-helvetica">
                     <div className="grid grid-cols-7 text-center mb-2">
                         {daysOfWeek.map((day, idx) => (
                             <div key={idx} className="text-[13px] font-bold text-gray-800">{day}</div>
@@ -394,19 +394,23 @@ const AvailabilityCalendar = () => {
     });
 
     return (
-        <section className="w-full bg-[#fafafa] py-16 px-4 relative">
-            <div className="max-w-[1000px] mx-auto flex flex-col items-center">
-
-                {/* Title & Subtitle */}
-                <h2 className="text-[#2D5D80] font-['Helvetica',sans-serif] text-[25px] md:text-[35px] font-normal mb-6 leading-tight">
+        <section className="scroll-mt-24 space-y-6">
+            {/* Standardized Header */}
+            <div>
+                <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#df9b29] block mb-2 font-raleway">
+                    Booking
+                </span>
+                <h2 className="text-[#2D5D80] font-helvetica text-[28px] md:text-[36px] font-normal mb-4 leading-tight">
                     Availability Calendar
                 </h2>
-                <p className="text-gray-700 text-[14px] md:text-[15px] text-center mb-6">
-                    <strong className="font-bold">Note:</strong> Click check-in date, then check-out date to get a quote
+                <p className="text-gray-600 text-[14px] md:text-[15px] font-helvetica mb-4">
+                    <strong className="font-bold">Note:</strong> Click check-in date, then check-out date to get a quote.
                 </p>
+            </div>
 
+            <div className="flex flex-col items-center">
                 {/* Legend */}
-                <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-10 text-[13px] text-gray-800 font-semibold">
+                <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-8 text-[13px] text-gray-800 font-semibold font-raleway">
                     <div className="flex items-center gap-2">
                         <span className="w-5 h-5 rounded bg-[#8b9de2]"></span> Current Date
                     </div>
@@ -429,10 +433,10 @@ const AvailabilityCalendar = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-4 mt-8">
-                    <button onClick={handlePrev} className="bg-[#2a3b4c] text-white px-6 py-2 rounded shadow hover:bg-[#1a252f] transition-colors text-sm font-semibold font-['Helvetica',sans-serif]">
+                    <button onClick={handlePrev} className="bg-[#2D5D80] text-white px-6 py-2.5 rounded-lg shadow hover:bg-[#1e425c] transition-colors text-sm font-semibold font-helvetica cursor-pointer">
                         Prev
                     </button>
-                    <button onClick={handleNext} className="bg-[#2a3b4c] text-white px-6 py-2 rounded shadow hover:bg-[#1a252f] transition-colors text-sm font-semibold font-['Helvetica',sans-serif]">
+                    <button onClick={handleNext} className="bg-[#2D5D80] text-white px-6 py-2.5 rounded-lg shadow hover:bg-[#1e425c] transition-colors text-sm font-semibold font-helvetica cursor-pointer">
                         Next
                     </button>
                 </div>
@@ -441,16 +445,16 @@ const AvailabilityCalendar = () => {
             {/* === MODAL === */}
             {isModalOpen && (
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-                    <div className="bg-white rounded-xl w-full max-w-[400px] p-6 shadow-2xl relative">
+                    <div className="bg-white rounded-xl w-full max-w-[400px] p-6 shadow-2xl relative animate-in fade-in-50 duration-200">
                         <button
                             onClick={() => setIsModalOpen(false)}
-                            className="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl leading-none"
+                            className="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl leading-none cursor-pointer"
                         >
                             &times;
                         </button>
-                        <h3 className="text-[#000e90] text-xl font-bold mb-4 font-['Helvetica',sans-serif]">Booking Form</h3>
+                        <h3 className="text-[#2D5D80] text-xl font-bold mb-4 font-helvetica">Booking Form</h3>
 
-                        <form onSubmit={handleFormSubmit} className="flex flex-col gap-3 font-['Raleway',sans-serif]">
+                        <form onSubmit={handleFormSubmit} className="flex flex-col gap-3 font-raleway text-[14px]">
                             <div className="flex flex-col gap-1">
                                 <label className="font-semibold text-sm">Check-in Date</label>
                                 <input type="text" readOnly value={selectionStart ? selectionStart.toDateString() : ''} className="p-2 border border-gray-300 rounded-md bg-gray-50" />
@@ -461,17 +465,17 @@ const AvailabilityCalendar = () => {
                             </div>
                             <div className="flex flex-col gap-1">
                                 <label className="font-semibold text-sm">Name</label>
-                                <input type="text" required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#2D5D80]" />
+                                <input type="text" required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#df9b29]" />
                             </div>
                             <div className="flex flex-col gap-1">
                                 <label className="font-semibold text-sm">Email</label>
-                                <input type="email" required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#2D5D80]" />
+                                <input type="email" required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#df9b29]" />
                             </div>
                             <div className="flex flex-col gap-1">
                                 <label className="font-semibold text-sm">Guests</label>
-                                <input type="number" min="1" required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#2D5D80]" />
+                                <input type="number" min="1" required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#df9b29]" />
                             </div>
-                            <button type="submit" className="mt-3 bg-[#a57f16] hover:bg-[#0215b9] transition-colors text-white font-bold py-2.5 rounded-md">
+                            <button type="submit" className="mt-3 bg-[#df9b29] hover:bg-[#c48824] transition-colors text-white font-bold py-2.5 rounded-md cursor-pointer">
                                 Confirm Booking
                             </button>
                         </form>
