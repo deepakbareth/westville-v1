@@ -120,7 +120,7 @@ const GallerySlider = () => {
             {/* Bottom Button */}
             <div className="flex justify-center mt-12 md:mt-16">
                 <a
-                    href="#full-gallery" // Replace with your actual gallery route
+                    href="/westville-v1/gallery" // Replace with your actual gallery route
                     className="bg-[#df9b29] hover:bg-[#c48824] text-black font-['lora'] text-[13px] px-10 py-4 tracking-[0.15em] uppercase transition-all duration-300 transform hover:-translate-y-1"
                 >
                     VIEW FULL GALLERY

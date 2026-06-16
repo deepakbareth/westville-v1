@@ -23,7 +23,7 @@ const Navbar = () => {
         { name: "HOME", path: "/westville-v1/" },
         { name: "YOUR HOSTS", path: "/westville-v1/your-hosts" },
         { name: "THE COTTAGE", path: "/westville-v1/the-cottage" },
-        { name: "GALLERY", path: "#" },
+        { name: "GALLERY", path: "/westville-v1/gallery" },
         { name: "P-TOWN", path: "#" },
         { name: "PETS", path: "#" }
     ];
