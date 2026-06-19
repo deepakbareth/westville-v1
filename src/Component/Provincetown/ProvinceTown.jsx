@@ -30,12 +30,12 @@ const ProvinceTown = () => {
                 </span>
 
                 {/* Main Heading */}
-                <h2 className="text-[#2D5D80] font-['Lora',serif] text-[26px] md:text-[40px] font-normal leading-tight tracking-wider uppercase mb-3 max-w-[750px]">
+                <h2 className="text-[#2D5D80] font-helvetica text-[25px] md:text-[35px] font-normal mb-2 leading-tight">
                     ABOUT OUR QUAINT LITTLE TOWN
                 </h2>
 
                 {/* Secondary Title */}
-                <h3 className="text-[#3c6798] font-['Lora',serif] text-[18px] md:text-[22px] font-normal  tracking-wide mb-3">
+                <h3 className="text-[#3c6798] font-helvetica text-[18px] md:text-[22px] font-normal  tracking-wide mb-3">
                     Affectionately Known As P-Town
                 </h3>
 

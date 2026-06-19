@@ -42,7 +42,7 @@ const WalkingAround = () => {
             <div className="max-w-[1000px] mx-auto flex flex-col items-start">
 
                 {/* Heading - Matched to the dark blue/gray bold text in your screenshot */}
-                <h2 className="text-[#2D5D80] font-normal font-['lora',sans-serif] text-[20px] md:text-[35px] mb-4">
+                <h2 className="text-[#2D5D80] font-normal font-helvetica text-[20px] md:text-[35px] mb-4">
                     Walking around P-town
                 </h2>
 

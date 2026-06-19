@@ -8,7 +8,7 @@ import WestvilleCottage from '../ReusableComp/WestvilleCottage';
 const PTownLayout = () => {
     return (
         <div>
-            <PageBanner />
+            <PageBanner title='Province Town' />
             <SubNavbar />
             {/* <WestvilleCottage /> */}
             <Outlet />

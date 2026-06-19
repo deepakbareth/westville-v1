@@ -16,7 +16,7 @@ const SubNavbar = () => {
 
     return (
         <div className="sticky top-20 md:top-24 z-40 w-full bg-[#111922]">
-            <div className="max-w-[1400px] mx-auto px-4 py-5 flex flex-wrap items-center justify-center gap-x-6 md:gap-x-8 gap-y-4">
+            <div className="max-w-[1400px] mx-auto px-4 py-3 flex flex-wrap items-center justify-center gap-x-6 md:gap-x-8 gap-y-4">
 
                 {subLinks.map((link, idx) => {
                     // Check if current URL matches the link

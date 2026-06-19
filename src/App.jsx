@@ -11,11 +11,13 @@ import Property from './Pages/Property'
 import ProvincetownPage from './Pages/ProvincetownPage'
 import PTownLayout from './Component/Layout/PTownLayout' // <-- Aapka naya Layout import karein
 import Gallery from './Pages/Gallery'
-
+import AttractionsPage from './Pages/AttractionsPage'
+import Restaurants from './Pages/RestaurantsPage'
+import ThingsToDoPage from './Pages/ThingsToDoPage'
 // Dummy pages for sub-links (Aap baad me inki real files bana kar import kar lena)
-const Attractions = () => <div className="py-20 text-center text-2xl">Attractions Content Here</div>;
-const Restaurants = () => <div className="py-20 text-center text-2xl">Restaurants Content Here</div>;
-const ThingsToDo = () => <div className="py-20 text-center text-2xl">Things To Do Content Here</div>;
+// const Attractionse = () => <div className="py-20 text-center text-2xl">Attractions Content Here</div>;
+// const Restaurants = () => <div className="py-20 text-center text-2xl">Restaurants Content Here</div>;
+// const ThingsToDo = () => <div className="py-20 text-center text-2xl">Things To Do Content Here</div>;
 
 function App() {
   return (
@@ -32,17 +34,17 @@ function App() {
 
         {/* === NESTED ROUTES FOR P-TOWN === */}
         {/* Parent Route me PTownLayout lagaya */}
-        {/* <Route path="/westville-v1/provincetown" element={<PTownLayout />}> */}
+        <Route path="/westville-v1/provincetown" element={<PTownLayout />}>
 
-        {/* 'index' ka matlab hai ki jab user /westville-v1/provincetown par jayega, to default ye dikhega */}
-        {/* <Route index element={<ProvincetownPage />} /> */}
+          {/* 'index' ka matlab hai ki jab user /westville-v1/provincetown par jayega, to default ye dikhega */}
+          <Route index element={<ProvincetownPage />} />
 
-        {/* Sub-pages: Ye sab aapke PTownLayout ke <Outlet /> ke andar dikhenge */}
-        {/* <Route path="attractions" element={<Attractions />} />
+          {/* Sub-pages: Ye sab aapke PTownLayout ke <Outlet /> ke andar dikhenge */}
+          <Route path="attractions" element={<AttractionsPage />} />
           <Route path="restaurants" element={<Restaurants />} />
-          <Route path="things-to-do" element={<ThingsToDo />} /> */}
+          <Route path="things-to-do" element={<ThingsToDoPage />} />
 
-        {/* </Route> */}
+        </Route>
       </Routes>
 
       {/* Footer jo har page par rahega */}
