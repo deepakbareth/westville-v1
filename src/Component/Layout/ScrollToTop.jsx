@@ -9,7 +9,7 @@ const ScrollToTop = () => {
         window.scrollTo({
             top: 0,
             left: 0,
-            // behavior: 'smooth' // or 'instant'
+            behavior: 'smooth' // or 'instant'
         });
     }, [pathname]);
     // Fires every time the URL path changes

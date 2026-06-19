@@ -37,7 +37,7 @@ const WalkingAround = () => {
     }, [images.length]);
 
     return (
-        <section className="w-full bg-white py-3 pb-10 px-6">
+        <section className="w-full bg-white py-10 md:py-20 pb-10 px-6">
             {/* max-w-[1000px] keeps the image wide but constrained, and centers the whole block */}
             <div className="max-w-[1000px] mx-auto flex flex-col items-start">
 

@@ -1,31 +1,31 @@
 import React, { useState } from "react";
 import logo from '../../assets/logo.png';
-import logo2 from '../../assets/logo2.png';
+import logo2 from '../../assets/P-Town/thingToDo/t3.jpg';
 import Paragraph from "../ReusableComp/Paragraph";
 
 const ProvinceTown = () => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <section className="relative w-full bg-white py-16 md:py-18 overflow-hidden flex items-center justify-center">
+        <section className="relative w-full bg-white py-14 md:py-15 overflow-hidden flex items-center justify-center">
             {/* Watermark Logo behind the content (not rotated, vertically oriented like the image) */}
             <img
                 src={logo2}
                 alt=""
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[700px] opacity-[0.060] pointer-events-none object-contain z-0"
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full opacity-[0.1] pointer-events-none object-contain z-0"
             />
 
             {/* Content Container */}
             <div className="relative z-10 max-w-[850px] mx-auto px-6 flex flex-col items-center text-center">
                 {/* Logo Icon at top center */}
-                <img
+                {/* <img
                     src={logo}
                     alt="Key Icon"
                     className="w-12 md:w-32 h-auto object-contain mb-4"
-                />
+                /> */}
 
                 {/* Subtitle / Category Label */}
-                <span className="text-[13px] md:text-[15px] font-bold tracking-[0.25em] text-[#1c2c3e] font-raleway uppercase mb-3">
+                <span className="text-[13px] md:text-[15px] font-bold tracking-[0.25em] text-[#1c2c3e] font-raleway uppercase mb-7">
                     ABOUT US
                 </span>
 
