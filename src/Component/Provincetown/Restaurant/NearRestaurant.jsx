@@ -63,11 +63,11 @@ const NearbyRestaurant = () => {
                         <div key={item.id} className="flex flex-col group">
 
                             {/* Image Container */}
-                            <div className="w-full aspect-[4/3] mb-6 overflow-hidden bg-gray-100">
+                            <div className="w-full aspect-[4/3] mb-6 overflow-hidden ">
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    className={`w-full h-full  ${item.id === 2 ? 'object-center' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
+                                    className={` h-full  ${item.id === 2 ? 'object-center m-auto' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
                                 />
                             </div>
 
@@ -83,13 +83,13 @@ const NearbyRestaurant = () => {
                             {/* <Paragraph text={item.description} className="mb-10" /> */}
 
                             {/* Link (Styling from Image 2: Uppercase, arrow circle icon) */}
-                            <a
+                            {/* <a
                                 href={item.link}
                                 className="inline-flex items-center gap-2 text-gray-700 font-['lora',sans-serif] text-[12px] md:text-[13px] font-semibold tracking-widest uppercase hover:text-[#df9b29] transition-colors duration-300 w-fit mt-auto"
                             >
                                 VISIT WEBSITE
                                 <ArrowRightCircle size={16} strokeWidth={1.5} className="mt-[1px]" />
-                            </a>
+                            </a> */}
 
                         </div>
                     ))}

@@ -11,9 +11,9 @@ const SubNavbar = () => {
         { name: "WHAT'S PROVIDED", path: "/westville-v1/pets/whats-provided" },
         { name: "MUST DO'S", path: "/westville-v1/pets/must-dos" },
         { name: "TRAVEL TIPS", path: "/westville-v1/pets/travel-tips" },
-        { name: "EMERGENCY CARE", path: "/westville-v1/pets/emergency-care" },
-        { name: "DOG PARK AND PET SERVICES", path: "/westville-v1/pets/dog-park-services" },
-        { name: "PET FRIENDLY RESTAURANTS", path: "/westville-v1/pets/pet-friendly-restaurants" }
+        { name: "EMERGENCY CARE", path: "/westville-v1/pets/#emergency-care" },
+        { name: "DOG PARK AND PET SERVICES", path: "/westville-v1/pets/#dog-park-services" },
+        { name: "PET FRIENDLY RESTAURANTS", path: "/westville-v1/pets/#pet-friendly-restaurants" }
     ];
 
 

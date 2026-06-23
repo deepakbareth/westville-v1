@@ -91,13 +91,13 @@ const NearbyAttractions = () => {
                             {/* <Paragraph text={item.description} className="mb-10" /> */}
 
                             {/* Link (Styling from Image 2: Uppercase, arrow circle icon) */}
-                            <a
+                            {/* <a
                                 href={item.link}
                                 className="inline-flex items-center gap-2 text-gray-700 font-['lora',sans-serif] text-[12px] md:text-[13px] font-semibold tracking-widest uppercase hover:text-[#df9b29] transition-colors duration-300 w-fit mt-auto"
                             >
                                 VISIT WEBSITE
                                 <ArrowRightCircle size={16} strokeWidth={1.5} className="mt-[1px]" />
-                            </a>
+                            </a> */}
 
                         </div>
                     ))}

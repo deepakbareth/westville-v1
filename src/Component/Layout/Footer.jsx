@@ -125,7 +125,7 @@ const Footer = () => {
                             <img
                                 src={premiumLogo}
                                 alt="Premium Business Websites"
-                                className="h-7 md:h-8 w-auto object-contain bg-black px-2 py-1 rounded"
+                                className="h-7 md:h-10 w-auto object-contain bg-black px-2 py-1 rounded"
                             />
                         </a>
                     </div>
