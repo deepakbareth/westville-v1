@@ -20,29 +20,6 @@ const Footer = () => {
                 />
             </div>
 
-            {/* === TOP BAR === */}
-            <div className="relative z-10 w-full border-b border-t border-white/10">
-                <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-16 py-4 md:py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-                    <div className="flex gap-6 md:gap-8 text-white text-[14px] md:text-[15px] font-medium">
-                        <a href="#email" className="hover:text-[#c38b31] transition-colors">Email Offers</a>
-                        <a href="#location" className="hover:text-[#c38b31] transition-colors">Location & Contact</a>
-                    </div>
-                    <div className="flex gap-6 text-[#c38b31]">
-                        <a href="#facebook" aria-label="Facebook" className="hover:text-[#a87b4f] transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg>
-                        </a>
-                        <a href="#instagram" aria-label="Instagram" className="hover:text-[#a87b4f] transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                                <path d="M16.11 7.5v-.01"></path>
-                                <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
 
             {/* === MAIN FOOTER CONTENT === */}
             <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-16 py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 lg:gap-8">
@@ -53,7 +30,7 @@ const Footer = () => {
                         WESTVILLE COTTAGE
                     </h3>
 
-                    <div className="flex flex-col gap-4 text-[15px] md:text-[16px] text-gray-200 leading-relaxed">
+                    <div className="flex flex-col gap-4 text-[15px] md:text-[15px] text-gray-200 leading-relaxed">
                         {/* Address / Serving Info */}
                         <div className="flex items-start justify-center md:justify-start gap-3 md:gap-4">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#c38b31] w-[20px] h-[20px] md:w-[22px] md:h-[22px] mt-1 shrink-0">
@@ -104,7 +81,7 @@ const Footer = () => {
                     <h3 className="text-[#df9b29] font-helvetica text-[20px] md:text-[24px] uppercase tracking-wide mb-4 md:mb-6">
                         FREQUENTLY ASKED QUESTIONS
                     </h3>
-                    <p className="text-[15px] md:text-[16px] text-gray-200 leading-relaxed mb-6 md:mb-8 max-w-[300px] mx-auto lg:mx-0">
+                    <p className="text-[15px] md:text-[15px] text-gray-200 leading-relaxed mb-6 md:mb-8 max-w-[300px] mx-auto lg:mx-0">
                         Have questions? We’ve got the answers right here.
                     </p>
                     <div>

@@ -61,13 +61,13 @@ const Rates = () => {
                                 </td>
 
                                 {/* Column 2: Per Week */}
-                                <td className="flex justify-between items-center md:table-cell py-3 md:py-4 md:px-6 md:text-right font-mono border-b border-gray-100 md:border-none">
+                                <td className="flex justify-between items-center md:table-cell py-3 md:py-4 md:px-6 md:text-right border-b border-gray-100 md:border-none">
                                     <span className="md:hidden font-bold text-gray-500 font-sans uppercase text-[11px] tracking-wider">Per Week</span>
                                     <span>{rate.weekly}</span>
                                 </td>
 
                                 {/* Column 3: Per Night */}
-                                <td className="flex justify-between items-center md:table-cell py-3 md:py-4 md:px-6 md:text-right font-mono border-b border-gray-100 md:border-none">
+                                <td className="flex justify-between items-center md:table-cell py-3 md:py-4 md:px-6 md:text-right border-b border-gray-100 md:border-none">
                                     <span className="md:hidden font-bold text-gray-500 font-sans uppercase text-[11px] tracking-wider">Per Night</span>
                                     <span>{rate.nightly}</span>
                                 </td>

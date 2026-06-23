@@ -98,7 +98,7 @@ const Amenities = () => {
                         {/* Category Title */}
                         <div className="flex items-center gap-3 border-b border-gray-200 pb-3 mb-4">
                             {category.icon}
-                            <h3 className="text-[#2D5D80] font-raleway text-[15px] md:text-[16px] font-bold tracking-wider">
+                            <h3 className="text-[#2D5D80] font-raleway text-[15px] md:text-[15px] font-bold tracking-wider">
                                 {category.title}
                             </h3>
                         </div>

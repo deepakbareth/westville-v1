@@ -44,7 +44,7 @@ const Overview = () => {
             <div className="pt-2">
                 <Paragraph
                     color="gray-600"
-                    size="text-[15px] md:text-[16px]"
+
                     text="Thank you for your interest in our charming, historic cottage. Originally built in the 19th century and thoughtfully restored with modern comforts, this cozy home blends Cape Cod character with boutique-style amenities. Unwind after a day of beach adventures or town explorations in the private garden patio, or cook a favorite meal in the fully equipped kitchen with stainless appliances. We’re pet-friendly and thoughtfully stocked with linens, plush towels, basic toiletries, and beach accessories so you can travel light and relax more."
                 />
             </div>

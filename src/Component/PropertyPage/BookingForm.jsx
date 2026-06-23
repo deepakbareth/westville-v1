@@ -38,19 +38,19 @@ const BookingForm = () => {
         <div className="border border-gray-400 shadow-2xl rounded-2xl overflow-hidden bg-white">
 
             {/* Top Rates Header (Matches Image) */}
-            <div className="bg-[#df9b29] text-white text-center py-2 px-4 font-helvetica">
+            <div className="bg-[#df9b29] text-white text-center py-1 px-4 font-helvetica">
                 <h4 className="text-xl md:text-[24px] font-normal tracking-wide">Rates from</h4>
-                <p className="text-xl md:text-2xl font-bold my-2">$315</p>
+                <p className="text-xl md:text-2xl font-bold my-1">$315</p>
                 <p className="text-xs tracking-wider uppercase opacity-90">Avg / Night</p>
             </div>
 
             {/* Bottom Form (Light Gray Background) */}
-            <div className="bg-[#e5e7eb] p-6 md:p-8">
+            <div className="bg-[#e5e7eb] p-3 md:p-2">
 
                 {/* Check Availability Header Button */}
                 <button
                     type="button"
-                    className="w-full bg-[#df9b29] text-white py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-lora font-bold text-[15px] uppercase tracking-wider shadow-sm hover:opacity-90 transition-opacity cursor-pointer mb-6"
+                    className="w-full bg-[#df9b29] text-white py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-lora font-bold text-[15px] uppercase tracking-wider shadow-sm hover:opacity-90 transition-opacity cursor-pointer mb-2"
                 >
                     <Calendar size={18} />
                     Check Availability
@@ -140,7 +140,7 @@ const BookingForm = () => {
                         <label className="block text-[14px] font-semibold text-gray-700">Message</label>
                         <textarea
                             name="message"
-                            rows="4"
+                            rows="2"
                             value={formData.message}
                             onChange={handleChange}
                             placeholder="Tell us about your stay..."
@@ -167,7 +167,7 @@ const BookingForm = () => {
                     </div>
                 </form>
 
-                <div className="text-[12px] font-raleway text-gray-600 text-center leading-relaxed mt-4">
+                <div className="text-[12px] font-raleway text-gray-600 text-center leading-relaxed mt-2">
                     We will only use your info to handle your inquiry.
                 </div>
             </div>

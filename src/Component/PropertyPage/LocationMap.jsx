@@ -12,7 +12,7 @@ const LocationMap = () => {
                 <h2 className="text-[#2D5D80] font-helvetica text-[28px] md:text-[36px] font-normal mb-4 leading-tight">
                     Find Us Here
                 </h2>
-                <p className="text-gray-600 leading-relaxed text-[15px] md:text-[16px] font-helvetica mb-4">
+                <p className="text-gray-600 leading-relaxed text-[15px] md:text-[15px] font-helvetica mb-4">
                     Explore Provincetown while you plan your stay at the luxury and comfort of Westville Cottage LLC. Located in the heart of Ptown, the cottage offers easy access to everything that defines Provincetown at its best. Come and stay with us.
                 </p>
 

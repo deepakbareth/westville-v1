@@ -25,7 +25,7 @@ const Navbar = () => {
         { name: "THE COTTAGE", path: "/westville-v1/the-cottage" },
         { name: "GALLERY", path: "/westville-v1/gallery" },
         { name: "P-TOWN", path: "/westville-v1/provincetown" },
-        { name: "PETS", path: "#" }
+        { name: "PETS", path: "/westville-v1/pets" }
     ];
 
     return (
@@ -48,7 +48,7 @@ const Navbar = () => {
                     ========================================= */}
                     <div className="flex md:hidden justify-between items-center w-full h-full px-4">
                         {/* Left: Phone Icon */}
-                        <a href="tel:5082964550" className="p-2 text-[#2c3e50]">
+                        <a href="tel:+1(508) 296-4550" className="p-2 text-[#2c3e50]">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
@@ -100,9 +100,9 @@ const Navbar = () => {
                         {/* Top Row: Call, Logo, Button */}
                         <div className="flex justify-between items-center w-full px-20">
                             {/* Left: Contact Info */}
-                            <div className="flex flex-col text-sm tracking-widest w-1/3 mt-3">
-                                <div className="text-white mb-1 text-[15px] font-['lora']">CALL:</div>
-                                <div className="text-[15px] font-['lora']">5082964550</div>
+                            <div className="flex gap-1 text-sm tracking-widest w-1/3 mt-3">
+                                <div className="text-white mb-1 text-[15px] font-['lora'] ">CALL :</div>
+                                <div className="text-[15px] font-['lora']">  +1 (508) 296-4550</div>
                             </div>
 
                             {/* Center: Logo Placeholder */}

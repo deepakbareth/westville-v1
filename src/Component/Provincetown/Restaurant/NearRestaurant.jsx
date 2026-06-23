@@ -25,7 +25,7 @@ const NearbyRestaurant = () => {
         {
             id: 2,
             image: monumentImg,
-            title: "Macs SeaFood",
+            title: "Mac's SeaFood",
             description: "We still believe there is no match for our local catch. That’s what inspires our ultra-high standards of quality, traceability, and sustainability. We take pride in sourcing directly from local fishermen to ensure every bite is as fresh as the ocean breeze. We ship our fresh seafood too.",
             link: "#"
         }
@@ -67,7 +67,7 @@ const NearbyRestaurant = () => {
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className={`w-full h-full  ${item.id === 2 ? 'object-center' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
                                 />
                             </div>
 

@@ -5,6 +5,7 @@ import host1 from '../../assets/Host/h1.jpg'; // Replace with your actual image 
 import host2 from '../../assets/Host/h2.jpg';
 import host3 from '../../assets/Host/h3.jpg';
 import host4 from '../../assets/Host/h4.jpg';
+// import host5 from '../../assets/Host/h5.jpg';
 import Heading from '../ReusableComp/Heading';
 import Paragraph from '../ReusableComp/Paragraph';
 
@@ -12,7 +13,7 @@ const Host = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const images = [host1, host2, host3, host4];
+    const images = [host1, host2, host3, host4,];
 
     // Image Slider Logic (Changes every 4 seconds)
     useEffect(() => {
@@ -24,14 +25,16 @@ const Host = () => {
     }, [images.length]);
 
     return (
-        <section className="w-full bg-white py-2 md:py-5 overflow-hidden">
+        <section className="w-full bg-white py-5 md:py-5 overflow-hidden">
 
-            <h2 className="max-w-5xl mx-auto text-center font-['Lora',serif] text-[#2D5D80] text-[17px] md:text-[20px] mb-6 md:mb-10 font-normal px-5 sm:px-0 leading-tight ">
+            <h2 className="max-w-5xl mx-auto text-center font-['Lora',serif] text-[#2D5D80] text-[17px] md:text-[20px] mb-6 md:mb-10 font-normal px-5 sm:px-0 leading-tight mt-[-25px] ">
                 "We're dedicated to maintaining old traditions that made Provincetown, Provincetown"
-                Voted #1 in guest hospitality
+
             </h2>
-            <div className='flex justify-center items-center '>
+            <div className='flex flex-col justify-center items-center '>
                 <Heading title="THE HOSTS" />
+                <h2 className="max-w-5xl mx-auto text-center mt-[-20px] font-['Lora',serif] text-[#2D5D80] text-[17px] md:text-[20px] mb-6 md:mb-10 font-normal px-5 sm:px-0 leading-tight ">
+                    Voted #1 in guest hospitality</h2>
             </div>
             <div className="max-w-[1200px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-start gap-12 md:gap-16">
 
@@ -49,9 +52,7 @@ const Host = () => {
                         {/* Expanded Text */}
                         <div className={`grid transition-all duration-500 ease-in-out ${isExpanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                             <div className="overflow-hidden">
-                                <p className="pt-2">
-                                    Finally, after three years of searching for our home away from home, we found this precious little gem. Our cozy, comfortable getaway for the family with, of course, our kids — Hadley, Whiskey*, Josie*, and Liberty* ... “the Wheatens”.
-                                </p>
+                                <Paragraph text={"Finally, after three years of searching for our home away from home, we found this precious little gem. Our cozy, comfortable getaway for the family with, of course, our kids — Hadley, Whiskey*, Josie*, and Liberty* ... “the Wheatens”."} />
 
                                 <div className="mt-6 space-y-2 text-[#3a4a5d]">
                                     <p><strong className="font-bold text-gray-900">Whiskey*</strong> Mar. 4, 2000 - Aug. 23, 2012</p>
@@ -82,8 +83,8 @@ const Host = () => {
                             key={idx}
                             src={img}
                             alt={`Host image ${idx + 1}`}
-                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                                }`}
+                            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                                } ${idx === 4 ? 'object-contain' : 'object-cover'}`}
                         />
                     ))}
                 </div>

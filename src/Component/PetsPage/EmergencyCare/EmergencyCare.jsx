@@ -37,11 +37,11 @@ const EmergencyCareComp = () => {
                 </h2>
 
                 {/* List Items - GRID LAYOUT */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-full mx-auto font-helvetica">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-full mx-auto font-helvetica">
                     {hospitals.map((hospital, idx) => (
                         <div
                             key={idx}
-                            className={`flex flex-col justify-between bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-sm shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:bg-gray-100/50 transition-all duration-200 ${idx === 2 ? 'md:col-span-2 md:max-w-2xl md:mx-auto w-full' : ''
+                            className={`flex flex-col justify-between bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-sm shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:bg-gray-100/50 transition-all duration-200 ${idx === 2 ? 'md:col-span-1 md:max-w-full md:mx-auto w-full' : ''
                                 }`}
                         >
                             <div>

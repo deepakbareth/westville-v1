@@ -4,7 +4,7 @@ import logo2 from '../../assets/logo2.png';
 
 const WestvilleCottage = () => {
     return (
-        <section className="relative w-full py-12 sm:py-5 md:py-10 overflow-hidden">
+        <section className="relative w-full py-18 sm:py-10 md:py-20 overflow-hidden">
             {/* Watermark Logo */}
             <img
                 src={logo2}
