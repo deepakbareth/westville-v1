@@ -7,6 +7,8 @@ import './App.css'
 import Navbar from './Component/Layout/Navbar'
 import Footer from './Component/Layout/Footer'
 import PTownLayout from './Component/Layout/PTownLayout' // <-- Aapka naya Layout import karein
+import PetsLayout from './Component/Layout/PetsLayout'
+import PetsPage from './Pages/PetsPage'
 
 // === LAZY LOADED PAGES ===
 // Pages are loaded dynamically only when the user clicks their route
@@ -18,6 +20,13 @@ const Gallery = lazy(() => import('./Pages/Gallery'))
 const AttractionsPage = lazy(() => import('./Pages/AttractionsPage'))
 const Restaurants = lazy(() => import('./Pages/RestaurantsPage'))
 const ThingsToDoPage = lazy(() => import('./Pages/ThingsToDoPage'))
+
+const WhatsProvided = lazy(() => import('./Pages/WhatsProvided'))
+const MustDos = lazy(() => import('./Pages/MustDos'))
+const TravelTips = lazy(() => import('./Pages/TravelTips'))
+const EmergencyCare = lazy(() => import('./Pages/EmergencyCare'))
+const DogParkServices = lazy(() => import('./Pages/DogParkServices'))
+const PetFriendlyRestaurants = lazy(() => import('./Pages/PetFriendlyRestaurants'))
 
 // Dummy pages for sub-links (Aap baad me inki real files bana kar import kar lena)
 // const Attractionse = () => <div className="py-20 text-center text-2xl">Attractions Content Here</div>;
@@ -52,11 +61,26 @@ function App() {
             <Route path="things-to-do" element={<ThingsToDoPage />} />
 
           </Route>
+
+          <Route path="/westville-v1/pets" element={<PetsLayout />}>
+            {/* 'index' ka matlab hai ki jab user /westville-v1/pets par jayega, to default ye dikhega */}
+            <Route index element={<PetsPage />} />
+
+            {/* Sub-pages under /westville-v1/pets */}
+            <Route path="whats-provided" element={<WhatsProvided />} />
+            <Route path="must-dos" element={<MustDos />} />
+            <Route path="travel-tips" element={<TravelTips />} />
+            <Route path="emergency-care" element={<EmergencyCare />} />
+            <Route path="dog-park-services" element={<DogParkServices />} />
+            <Route path="pet-friendly-restaurants" element={<PetFriendlyRestaurants />} />
+          </Route>
+
         </Routes>
-      </Suspense>
+
+      </Suspense >
 
       {/* Footer jo har page par rahega */}
-      <Footer />
+      < Footer />
     </>
   )
 }
