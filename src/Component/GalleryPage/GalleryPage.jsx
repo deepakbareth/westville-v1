@@ -52,8 +52,7 @@ const CATEGORIES = [
     { id: 'provincetown', label: 'Provincetown' }
 ];
 
-const GalleryPage = () => {
-    const [selectedCategory, setSelectedCategory] = useState('all');
+const GalleryPage = ({ selectedCategory = 'all' }) => {
     const [lightboxIndex, setLightboxIndex] = useState(null);
     const [visibleCount, setVisibleCount] = useState(8);
 
@@ -109,21 +108,6 @@ const GalleryPage = () => {
         <section className="bg-[#f4f6f8] py-16 md:py-24 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
 
-                {/* === CATEGORY FILTER TABS === */}
-                <div className="flex flex-wrap justify-center items-center gap-2 mb-12">
-                    {CATEGORIES.map((tab) => (
-                        <button
-                            key={tab.id}
-                            onClick={() => setSelectedCategory(tab.id)}
-                            className={`px-6 py-2.5 font-['lora',sans-serif] text-[13px] font-semibold tracking-[0.15em] uppercase border transition-all duration-300 cursor-pointer ${selectedCategory === tab.id
-                                ? 'bg-[#df9b29] text-black border-[#df9b29] shadow-md'
-                                : 'bg-white text-[#1c2c3e] border-gray-200 hover:border-[#df9b29] hover:text-[#df9b29]'
-                                }`}
-                        >
-                            {tab.label}
-                        </button>
-                    ))}
-                </div>
                 {/* === VIDEOS SECTION === */}
                 {selectedCategory === 'all' && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
