@@ -37,7 +37,7 @@ const AboutPets = () => {
                 <Heading title="Pets at The Westville" />
             </div>
 
-            <div className="max-w-[1200px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-start gap-12 md:gap-16">
+            <div className="max-w-[1200px] mx-auto px-6 py-10 lg:px-12 flex flex-col md:flex-row items-start gap-12 md:gap-16">
 
                 {/* === LEFT SIDE: TEXT CONTENT === */}
                 <div className="w-full md:w-1/2 flex flex-col items-start text-left">

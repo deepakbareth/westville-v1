@@ -67,12 +67,12 @@ function App() {
             <Route index element={<PetsPage />} />
 
             {/* Sub-pages under /westville-v1/pets */}
-            <Route path="whats-provided" element={<WhatsProvided />} />
-            <Route path="must-dos" element={<MustDos />} />
-            <Route path="travel-tips" element={<TravelTips />} />
-            {/* <Route path="emergency-care" element={<EmergencyCare />} />
+            {/* <Route path="whats-provided" element={<WhatsProvided />} />
+            <Route path="must-dos" element={<MustDos />} /> */}
+            {/* <Route path="travel-tips" element={<TravelTips />} />
+            <Route path="emergency-care" element={<EmergencyCare />} /> */}
             <Route path="dog-park-services" element={<DogParkServices />} />
-            <Route path="pet-friendly-restaurants" element={<PetFriendlyRestaurants />} /> */}
+            <Route path="pet-friendly-restaurants" element={<PetFriendlyRestaurants />} />
           </Route>
 
         </Routes>
