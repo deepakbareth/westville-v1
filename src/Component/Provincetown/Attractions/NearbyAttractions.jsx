@@ -71,11 +71,18 @@ const NearbyAttractions = () => {
                         <div key={item.id} className="flex flex-col group">
 
                             {/* Image Container */}
-                            <div className="w-4/4 aspect-[3/3] mb-6 overflow-hidden bg-gray-100">
+                            {/* <div className="w-4/4 aspect-[3/3] mb-6 overflow-hidden bg-gray-100">
                                 <img
                                     src={item.image}
                                     alt={item.title}
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                            </div> */}
+                            <div className="w-4/4 aspect-[3/3] mb-6 overflow-hidden ">
+                                <img
+                                    src={item.image}
+                                    alt={item.title}
+                                    className="w-full h-full object-contain  transition-transform duration-500 group-hover:scale-105"
                                 />
                             </div>
 

@@ -47,13 +47,25 @@ const WalkingAround = () => {
                 </h2>
 
                 {/* Image Slider Container */}
-                <div className="relative w-full h-[250px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-lg bg-gray-100">
+                {/* <div className="relative w-full h-[250px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-lg bg-gray-100">
                     {images.map((img, idx) => (
                         <img
                             key={idx}
                             src={img}
                             alt={`Walking around P-town view ${idx + 1}`}
                             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${idx === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                                }`}
+                        />
+                    ))}
+                </div> */}
+
+                <div className="relative w-full h-[250px] sm:h-[400px] md:h-[500px]  overflow-hidden ">
+                    {images.map((img, idx) => (
+                        <img
+                            key={idx}
+                            src={img}
+                            alt={`Walking around P-town view ${idx + 1}`}
+                            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out ${idx === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
                                 }`}
                         />
                     ))}

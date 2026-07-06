@@ -37,7 +37,7 @@ const AboutPets = () => {
                 <Heading title="Pets at The Westville" />
             </div>
 
-            <div className="max-w-[1200px] mx-auto px-6 py-10 lg:px-12 flex flex-col md:flex-row items-start gap-12 md:gap-16">
+            <div className="max-w-[1200px] mx-auto px-6 py-10 lg:px-12 flex flex-col md:flex-row items-center  gap-12 md:gap-16">
 
                 {/* === LEFT SIDE: TEXT CONTENT === */}
                 <div className="w-full md:w-1/2 flex flex-col items-start text-left">
@@ -75,13 +75,13 @@ const AboutPets = () => {
                 </div>
 
                 {/* === RIGHT SIDE: IMAGE SLIDER === */}
-                <div className="w-full md:w-1/2 relative h-[350px] sm:h-[400px] md:h-[450px] rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
+                <div className="w-full md:w-1/2 relative h-[350px] sm:h-[400px] md:h-[450px] overflow-hidden ">
                     {images.map((img, idx) => (
                         <img
                             key={idx}
                             src={img}
                             alt={`Host image ${idx + 1}`}
-                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
                                 }`}
                         />
                     ))}

@@ -77,7 +77,7 @@ const Host = () => {
                 </div>
 
                 {/* === RIGHT SIDE: IMAGE SLIDER === */}
-                <div className="w-full md:w-1/2 relative h-[350px] sm:h-[400px] md:h-[450px] rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
+                {/* <div className="w-full md:w-1/2 relative h-[350px] sm:h-[400px] md:h-[450px] rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
                     {images.map((img, idx) => (
                         <img
                             key={idx}
@@ -85,6 +85,17 @@ const Host = () => {
                             alt={`Host image ${idx + 1}`}
                             className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
                                 } ${idx === 4 ? 'object-contain' : 'object-cover'}`}
+                        />
+                    ))}
+                </div> */}
+                <div className="w-full md:w-1/2 relative h-[350px] sm:h-[400px] md:h-[450px] overflow-hidden ">
+                    {images.map((img, idx) => (
+                        <img
+                            key={idx}
+                            src={img}
+                            alt={`Host image ${idx + 1}`}
+                            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                                }`}
                         />
                     ))}
                 </div>

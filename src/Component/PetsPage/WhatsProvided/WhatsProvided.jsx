@@ -21,8 +21,8 @@ const WhatsProvidedComp = () => {
 
                 {/* Price Section */}
                 <div className="text-[15px] md:text-[20px] text-gray-900 font-normal font-helvetica leading-relaxed mb-6">
-                    <span className="font-bold text-[#df9b29] font-raleway tracking-[0.1em] uppercase mr-1">Price:</span>
-                    <span>$175/pet/week or $35/night</span>
+                    <span className="font-bold text-[#df9b29] font-raleway tracking-[0.1em] uppercase mr-1">Fee:</span>
+                    <span>$175/pet/week | $40/night/pet </span>
                 </div>
 
                 {/* Description */}

@@ -25,11 +25,11 @@ const ThinkToDoCard = ({ item }) => {
         <div className="relative group overflow-hidden w-full h-[450px] md:h-[500px] cursor-pointer bg-black rounded-sm shadow-[0_4px_15px_rgba(0,0,0,0.05)]">
 
             {/* Background Image with the smooth zoom & slight blur effect */}
-            <img
+            {/* <img
                 src={item.image}
                 alt={item.title}
                 className="absolute inset-0 w-full h-full object-cover transition-all duration-[1000ms] ease-out group-hover:scale-110 group-hover:blur-sm"
-            />
+            /> */}
 
             {/* Default Overlay: Bottom gradient for text readability */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 to-transparent opacity-100 transition-opacity duration-500 group-hover:opacity-0" />

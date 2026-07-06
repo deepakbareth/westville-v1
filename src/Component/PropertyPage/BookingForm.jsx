@@ -48,13 +48,15 @@ const BookingForm = () => {
             <div className="bg-[#e5e7eb] p-3 md:p-2">
 
                 {/* Check Availability Header Button */}
-                <button
-                    type="button"
-                    className="w-full bg-[#df9b29] text-white py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-lora font-bold text-[15px] uppercase tracking-wider shadow-sm hover:opacity-90 transition-opacity cursor-pointer mb-2"
-                >
-                    <Calendar size={18} />
-                    Check Availability
-                </button>
+                <a href="#availability">
+                    <button
+                        type="button"
+                        className="w-full bg-[#df9b29] text-white py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-lora font-bold text-[15px] uppercase tracking-wider shadow-sm hover:opacity-90 transition-opacity cursor-pointer mb-2"
+                    >
+                        <Calendar size={18} />
+                        Check Availability
+                    </button>
+                </a>
 
                 <form onSubmit={handleSubmit} className="space-y-4 font-raleway text-[14px]">
 
