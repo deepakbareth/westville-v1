@@ -92,7 +92,7 @@ const AvailabilityCalendar = () => {
 
     const handleBookingSubmit = (e) => {
         e.preventDefault();
-        alert("✅ Your booking has been confirmed!");
+        alert("✅ Your booking inquiry has been sent!");
         closeModal();
     };
 
@@ -310,12 +310,34 @@ const AvailabilityCalendar = () => {
                                         <label className="font-semibold text-sm">Email</label>
                                         <input type="email" required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#df9b29]" />
                                     </div>
-                                    <div className="flex flex-col gap-1">
-                                        <label className="font-semibold text-sm">Guests</label>
-                                        <input type="number" min="1" required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#df9b29]" />
+                                    
+                                    {/* Adults and Pets side-by-side */}
+                                    <div className="grid grid-cols-2 gap-3">
+                                        <div className="flex flex-col gap-1">
+                                            <label className="font-semibold text-sm">Adults</label>
+                                            <select required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#df9b29] bg-white cursor-pointer">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        </div>
+                                        <div className="flex flex-col gap-1">
+                                            <label className="font-semibold text-sm">Pets</label>
+                                            <select required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#df9b29] bg-white cursor-pointer">
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        </div>
                                     </div>
+
+                                    {/* Message */}
+                                    <div className="flex flex-col gap-1">
+                                        <label className="font-semibold text-sm">Message</label>
+                                        <textarea rows="2" className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#df9b29] resize-none" placeholder="Tell us about your stay..." />
+                                    </div>
+
                                     <button type="submit" className="mt-3 bg-[#df9b29] hover:bg-[#c48824] transition-colors text-white font-bold py-2.5 rounded-md cursor-pointer">
-                                        Confirm Booking
+                                        Send Booking
                                     </button>
                                 </form>
                             </>
