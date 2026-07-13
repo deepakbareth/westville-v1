@@ -1,12 +1,14 @@
 import React from 'react';
 import PageBanner from '../Component/ReusableComp/PageBanner';
 import WestvilleDocumentsComp from '../Component/WestvilleDocuments/WestvilleDocuments';
+import WestvilleCottage from '../Component/ReusableComp/WestvilleCottage';
 
 function WestvilleDocuments() {
     return (
         <div className="bg-[#fcfbfa] min-h-screen flex flex-col">
             {/* Page Banner at the top */}
             <PageBanner title="Westville Documents" />
+            <WestvilleCottage />
 
             {/* Westville Documents main component */}
             <WestvilleDocumentsComp />

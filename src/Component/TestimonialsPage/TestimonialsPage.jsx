@@ -1,4 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
+import WestvilleCottage from '../ReusableComp/WestvilleCottage';
+
+// Sub-component for individual Testimonial Cards
+const TestimonialCard = ({ item }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const isLongText = item.text.length > 200;
+    const displayText = (!isExpanded && isLongText)
+        ? item.text.substring(0, 200) + '...'
+        : item.text;
+
+    return (
+        <div className="bg-[#FAF7F2] border-[10px] md:border-[14px] border-white rounded-[18px] md:rounded-[24px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] p-6 md:p-8 flex flex-col justify-between hover:shadow-[0_20px_45px_rgba(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-300 ">
+            <div>
+                {/* 5 Star Ratings */}
+                <div className="flex gap-1.5 mb-6 text-[#d9a44c]">
+                    {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                    ))}
+                </div>
+
+                {/* Review Text */}
+                <p className="font-helvetica text-slate-600 leading-[1.8] text-[15px] md:text-[16px] mb-6 font-normal">
+                    "{displayText}"
+                </p>
+
+                {/* Read More / Read Less Button */}
+                {isLongText && (
+                    <button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        className="text-[#df9b29] hover:text-[#c48824] uppercase tracking-widest text-[12px] font-bold font-lora mb-8 transition-colors cursor-pointer block"
+                    >
+                        {isExpanded ? 'READ LESS' : 'READ MORE'}
+                    </button>
+                )}
+            </div>
+
+            {/* Separator line & Author */}
+            <div>
+                <div className="h-[1px] bg-slate-100 w-full mb-6"></div>
+                <h4 className="font-helvetica font-bold tracking-wider text-[13px] md:text-[14px] text-[#2D5D80] uppercase">
+                    {item.author}
+                </h4>
+                <span className="text-[12px] text-slate-400 font-raleway font-medium tracking-wide block mt-1">Verified Guest</span>
+            </div>
+        </div>
+    );
+};
 
 function TestimonialsPage() {
     const testimonials = [
@@ -37,56 +86,42 @@ function TestimonialsPage() {
         {
             text: "One of my best vacations ever Was beyond my expectations one of the best vacations ever everything u need was there and more can't wait to come back.",
             author: "Jorge, West Palm Beach FL"
-
         }
     ];
 
-    return (
-        <section className="w-full bg-[#fcfbfa] py-20 px-6 overflow-hidden">
-            <div className="max-w-[1200px] mx-auto flex flex-col items-center">
+    const [visibleCount, setVisibleCount] = useState(6);
 
+    return (
+        <div className="w-full bg-[#fcfbfa] pb-20">
+            {/* Reusable Subheader/Logo section at the top */}
+            <WestvilleCottage />
+
+            <div className="max-w-[1300px] mx-auto px-6 overflow-hidden">
                 {/* Heading */}
                 <h2 className="text-[#2D5D80] font-helvetica text-[32px] md:text-[40px] font-normal mb-16 tracking-wide leading-tight w-full text-center uppercase">
                     Testimonials
                 </h2>
 
                 {/* Grid Layout of Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-                    {testimonials.map((item, idx) => (
-                        <div
-                            key={idx}
-                            className="bg-white border border-slate-100 p-8 md:p-10 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.02)] flex flex-col justify-between hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300"
-                        >
-                            <div>
-                                {/* 5 Star Ratings */}
-                                <div className="flex gap-1.5 mb-6 text-[#d9a44c]">
-                                    {[...Array(5)].map((_, i) => (
-                                        <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                        </svg>
-                                    ))}
-                                </div>
-
-                                {/* Review Text */}
-                                <p className="font-raleway text-slate-600 leading-[1.8] text-[15px] md:text-[16px] mb-8 font-normal">
-                                    "{item.text}"
-                                </p>
-                            </div>
-
-                            {/* Separator line & Author */}
-                            <div>
-                                <div className="h-[1px] bg-slate-100 w-full mb-6"></div>
-                                <h4 className="font-helvetica font-bold tracking-wider text-[13px] md:text-[14px] text-[#2D5D80] uppercase">
-                                    {item.author}
-                                </h4>
-                                <span className="text-[12px] text-slate-400 font-raleway font-medium tracking-wide block mt-1">Verified Guest</span>
-                            </div>
-                        </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full pb-20 px-12">
+                    {testimonials.slice(0, visibleCount).map((item, idx) => (
+                        <TestimonialCard key={idx} item={item} />
                     ))}
                 </div>
 
+                {/* Load More Button */}
+                {visibleCount < testimonials.length && (
+                    <div className="flex justify-center mt-16">
+                        <button
+                            onClick={() => setVisibleCount((prev) => prev + 6)}
+                            className="inline-block bg-[#df9b29] hover:bg-[#c48824] text-white font-bold font-lora text-[13px] px-10 py-4 tracking-widest uppercase transition-all duration-300 rounded-sm shadow-sm cursor-pointer"
+                        >
+                            Load More
+                        </button>
+                    </div>
+                )}
             </div>
-        </section>
+        </div>
     );
 }
 
