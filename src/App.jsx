@@ -28,6 +28,8 @@ const EmergencyCare = lazy(() => import('./Pages/EmergencyCare'))
 const DogParkServices = lazy(() => import('./Pages/DogParkServices'))
 const PetFriendlyRestaurants = lazy(() => import('./Pages/PetFriendlyRestaurants'))
 
+const WestvilleDocuments = lazy(() => import('./Pages/WestvilleDocuments'))
+
 // Dummy pages for sub-links (Aap baad me inki real files bana kar import kar lena)
 // const Attractionse = () => <div className="py-20 text-center text-2xl">Attractions Content Here</div>;
 // const Restaurants = () => <div className="py-20 text-center text-2xl">Restaurants Content Here</div>;
@@ -47,6 +49,7 @@ function App() {
           <Route path="/westville-v1/your-hosts" element={<YourHost />} />
           <Route path="/westville-v1/the-cottage" element={<Property />} />
           <Route path="/westville-v1/gallery" element={<Gallery />} />
+          <Route path="/westville-v1/westville-documents" element={<WestvilleDocuments />} />
 
           {/* === NESTED ROUTES FOR P-TOWN === */}
           {/* Parent Route me PTownLayout lagaya */}
