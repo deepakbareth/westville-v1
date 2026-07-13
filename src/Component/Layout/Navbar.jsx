@@ -1,11 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // <-- Added Link import
+import { Link, useNavigate, useLocation } from 'react-router-dom'; // <-- Added Link, useNavigate, useLocation imports
 import logo from '../../assets/logo.png'
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     // New state to handle mobile menu toggle
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleBookNow = () => {
+        if (location.pathname === '/westville-v1/the-cottage') {
+            const element = document.getElementById('availability');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            navigate('/westville-v1/the-cottage#availability');
+        }
+        setIsMobileMenuOpen(false); // Close mobile menu if open
+    };
 
     // Track scroll position to trigger the sleek layout transformation
     useEffect(() => {
@@ -117,7 +132,7 @@ const Navbar = () => {
 
                             {/* Right: CTA Button */}
                             <div className="w-1/3 flex justify-end mt-2">
-                                <button className="bg-[#df9b29] hover:bg-[#c48824] text-black font-semibold font-['Lora'] text-[13px] px-13 py-4 tracking-widest transition-colors duration-300">
+                                <button onClick={handleBookNow} className="bg-[#df9b29] hover:bg-[#c48824] text-black font-semibold font-['Lora'] text-[13px] px-13 py-4 tracking-widest transition-colors duration-300 cursor-pointer">
                                     BOOK NOW
                                 </button>
                             </div>
@@ -173,7 +188,7 @@ const Navbar = () => {
                         </div>
 
                         {/* Right: CTA Button */}
-                        <button className="bg-[#df9b29] hover:bg-[#c48824] text-black font-semibold font-['Lora'] text-[13px] px-13 py-4 tracking-widest transition-colors duration-300">
+                        <button onClick={handleBookNow} className="bg-[#df9b29] hover:bg-[#c48824] text-black font-semibold font-['Lora'] text-[13px] px-13 py-4 tracking-widest transition-colors duration-300 cursor-pointer">
                             BOOK NOW
                         </button>
                     </div>
@@ -207,7 +222,7 @@ const Navbar = () => {
 
                 {/* Full Width Book Now Button perfectly anchored at the bottom */}
                 <div className="w-full bg-[#df9b29]">
-                    <button className="w-full py-5 text-black font-semibold font-['Lora'] text-[13px] tracking-widest hover:bg-[#c48824] transition-colors">
+                    <button onClick={handleBookNow} className="w-full py-5 text-black font-semibold font-['Lora'] text-[13px] tracking-widest hover:bg-[#c48824] transition-colors cursor-pointer">
                         BOOK NOW
                     </button>
                 </div>

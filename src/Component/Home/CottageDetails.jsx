@@ -1,5 +1,6 @@
 import React from 'react';
-import img from '../../assets/home/vid3.jpg'
+import { Link } from 'react-router-dom';
+import img from '../../assets/home/vid3.jpg';
 
 const CottageDetails = () => {
 
@@ -96,9 +97,12 @@ const CottageDetails = () => {
 
                 {/* View Details Button */}
                 <div>
-                    <button className="border border-white/60 hover:bg-white hover:text-[#1d2733] text-white font-medium font-['lora'] text-[13px] px-8 py-3 tracking-[0.15em] uppercase transition-colors duration-300">
+                    <Link
+                        to="/westville-v1/the-cottage#overview"
+                        className="inline-block border border-white/60 hover:bg-white hover:text-[#1d2733] text-white font-medium font-['lora'] text-[13px] px-8 py-3 tracking-[0.15em] uppercase transition-colors duration-300 cursor-pointer"
+                    >
                         VIEW DETAILS
-                    </button>
+                    </Link>
                 </div>
 
             </div>
