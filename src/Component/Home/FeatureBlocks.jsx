@@ -67,14 +67,7 @@ const FeatureBlocks = () => {
                                             {feature.description}
                                         </p>
 
-                                        {/* Learn More Link */}
-                                        <div className="flex items-center text-[#df9b29] hover:text-[#c48824] transition-colors duration-300 w-fit">
-                                            <span
-                                                className="uppercase tracking-[0.15em] text-xs  font-['lora'] mr-3 font-[13px]">
-                                                {feature.linkText}
-                                            </span>
-                                            <ArrowRightCircle size={18} strokeWidth={1.5} />
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>

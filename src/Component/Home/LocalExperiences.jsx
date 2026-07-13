@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Plus, ArrowRightCircle } from 'lucide-react';
 
 // Update these paths to match your project's asset structure
@@ -85,13 +86,16 @@ const LocalExperiences = () => {
                                             {exp.description}
                                         </p>
 
-                                        <div className="flex items-center text-[#df9b29] hover:text-[#c48824] transition-colors duration-300 w-fit">
+                                        <Link
+                                            to="/westville-v1/provincetown/attractions"
+                                            className="flex items-center text-[#df9b29] hover:text-[#c48824] transition-colors duration-300 w-fit cursor-pointer"
+                                        >
                                             <span
                                                 className="uppercase tracking-[0.15em] text-xs  font-['lora'] mr-3 font-[13px]">
                                                 {exp.linkText}
                                             </span>
                                             <ArrowRightCircle size={16} strokeWidth={1.5} />
-                                        </div>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
