@@ -1,7 +1,7 @@
 
 import AboutPets from "../Component/PetsPage/AboutPets"
 import WestvilleCottage from "../Component/ReusableComp/WestvilleCottage"
-import Whatsprovided from "../Component/PetsPage/WhatsProvided/WhatsProvided"
+import WhatsProvided from "../Component/PetsPage/WhatsProvided/WhatsProvided"
 import MustDos from "../Component/PetsPage/MustDos/MustDos"
 
 function PetsPage() {
@@ -9,7 +9,7 @@ function PetsPage() {
         <div>
             <WestvilleCottage />
             <AboutPets />
-            <Whatsprovided />
+            <WhatsProvided />
             <div className="py-5" />
             <MustDos />
 
