@@ -103,7 +103,7 @@ function TestimonialsPage() {
                 </h2>
 
                 {/* Grid Layout of Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full pb-20 px-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full pb-20 md:px-12 px-1">
                     {testimonials.slice(0, visibleCount).map((item, idx) => (
                         <TestimonialCard key={idx} item={item} />
                     ))}

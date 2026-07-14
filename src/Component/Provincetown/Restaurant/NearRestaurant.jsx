@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRightCircle } from 'lucide-react'; // Using Lucide for the arrow icon in the 2nd design
 
 // Placeholder images - replace these with your actual image paths
-import theatreImg from '../../../assets/P-Town/restaurant/r1.jpg';
+import theatreImg from '../../../assets/P-Town/restaurant/r6.jpg';
 import monumentImg from '../../../assets/P-Town/restaurant/r2.jpg';
 import factory from '../../../assets/P-Town/restaurant/r3.jpg';
 import sleep from '../../../assets/P-Town/restaurant/r4.jpg';

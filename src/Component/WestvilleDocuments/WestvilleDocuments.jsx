@@ -33,7 +33,7 @@ function WestvilleDocuments() {
                     {/* Checking-Out PDF Button */}
                     <button
                         onClick={() => setActivePdf({ url: checkingOutPdf, title: 'Checking-Out' })}
-                        className="w-full sm:w-auto inline-block bg-[#337ab7] hover:bg-[#286090] text-white font-bold font-raleway text-[16px] px-10 py-5 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-0.5 text-center min-w-[240px] cursor-pointer"
+                        className="w-full sm:w-auto inline-block bg-[#df9b29] hover:bg-[#c48824] text-white font-bold font-raleway text-[16px] px-10 py-5 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-0.5 text-center min-w-[240px] cursor-pointer"
                     >
                         Checking-Out
                     </button>
@@ -41,7 +41,7 @@ function WestvilleDocuments() {
                     {/* Guidelines & Instructions PDF Button */}
                     <button
                         onClick={() => setActivePdf({ url: guidelinesPdf, title: 'Guidelines & Instructions' })}
-                        className="w-full sm:w-auto inline-block bg-[#28a745] hover:bg-[#218838] text-white font-bold font-raleway text-[16px] px-10 py-5 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-0.5 text-center min-w-[240px] cursor-pointer"
+                        className="w-full sm:w-auto inline-block bg-[#df9b29] hover:bg-[#c48824] text-white font-bold font-raleway text-[16px] px-10 py-5 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-0.5 text-center min-w-[240px] cursor-pointer"
                     >
                         Guidelines & Instructions
                     </button>
