@@ -104,8 +104,8 @@ const Footer = () => {
                     {/* Bottom Links */}
                     <div className="flex flex-wrap justify-center gap-x-6 md:gap-x-8 gap-y-2 md:gap-y-3">
                         <Link to="/westville-v1/#blogs" className="hover:text-[#c38b31] transition-colors">Blogs</Link>
-                        <Link to="/westville-v1/#form1" className="hover:text-[#c38b31] transition-colors">Form 1</Link>
-                        <Link to="/westville-v1/#form2" className="hover:text-[#c38b31] transition-colors">Form 2</Link>
+                        <Link to="/westville-v1/form1" className="hover:text-[#c38b31] transition-colors">Form 1</Link>
+                        <Link to="/westville-v1/form2" className="hover:text-[#c38b31] transition-colors">Form 2</Link>
                         <Link to="/westville-v1/#accessibility" className="hover:text-[#c38b31] transition-colors">Accessibility</Link>
                     </div>
 
