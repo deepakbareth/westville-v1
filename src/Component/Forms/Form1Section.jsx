@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { format, parse, isValid } from 'date-fns';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const Form1Section = () => {
     const [formData, setFormData] = useState({
@@ -49,6 +52,23 @@ const Form1Section = () => {
         attestCorrect: false,
         termsAgree: false
     });
+
+    const parseDateString = (val) => {
+        if (!val) return null;
+        let parsed = parse(val, 'MM/dd/yy', new Date());
+        if (isValid(parsed)) return parsed;
+        parsed = parse(val, 'MM/dd/yyyy', new Date());
+        if (isValid(parsed)) return parsed;
+        return null;
+    };
+
+    const handleDatePickerChange = (date, name) => {
+        if (!date) {
+            setFormData(prev => ({ ...prev, [name]: '' }));
+        } else {
+            setFormData(prev => ({ ...prev, [name]: format(date, 'MM/dd/yy') }));
+        }
+    };
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -111,52 +131,7 @@ const Form1Section = () => {
     const handleReset = () => {
         if (window.confirm("Are you sure you want to reset the form?")) {
             setFormData({
-                bookingId: '',
-                emailAddress: '',
-                todayDate: '',
-                checkIn: '',
-                checkOut: '',
-                fullName: '',
-                dateOfBirth: '',
-                address: '',
-                city: '',
-                state: '',
-                zipCode: '',
-                country: '',
-                occupation: '',
-                workYears: '',
-                workMonths: '',
-                govtId: null,
-                homePhone: '',
-                cellPhone: '',
-                contactEmail: '',
-                preferredContact: '',
-                questionsComments: '',
-                passportNo: '',
-                countryOfIssue: '',
-                passportExpiry: '',
-                petName1: '',
-                petBreed1: '',
-                petWeight1: '',
-                petVacDate1: '',
-                petName2: '',
-                petBreed2: '',
-                petWeight2: '',
-                petVacDate2: '',
-                paymentMode: '',
-                billingSameAsAbove: false,
-                billingAddress: '',
-                billingCity: '',
-                billingState: '',
-                billingZip: '',
-                billingCountry: '',
-                stayedBefore: '',
-                ownerDetails: '',
-                invitedBack: '',
-                howDidHear: '',
-                mailingListOptIn: false,
-                attestCorrect: false,
-                termsAgree: false
+                bookingId: '', emailAddress: '', todayDate: '', checkIn: '', checkOut: '', fullName: '', dateOfBirth: '', address: '', city: '', state: '', zipCode: '', country: '', occupation: '', workYears: '', workMonths: '', govtId: null, homePhone: '', cellPhone: '', contactEmail: '', preferredContact: '', questionsComments: '', passportNo: '', countryOfIssue: '', passportExpiry: '', petName1: '', petBreed1: '', petWeight1: '', petVacDate1: '', petName2: '', petBreed2: '', petWeight2: '', petVacDate2: '', paymentMode: '', billingSameAsAbove: false, billingAddress: '', billingCity: '', billingState: '', billingZip: '', billingCountry: '', stayedBefore: '', ownerDetails: '', invitedBack: '', howDidHear: '', mailingListOptIn: false, attestCorrect: false, termsAgree: false
             });
         }
     };
@@ -174,8 +149,8 @@ const Form1Section = () => {
                 <p className="mb-3">
                     <strong>Notice to the Guest(s):</strong> Thank you for your interest in booking the Westville Cottage for your vacation getaway to Provincetown. Please take a moment to complete this information for each Guest, including pets if applicable. Please note, prior to occupancy, owners must provide proof of vaccination and confirm application of flea and tick repellent. The information requested will be used strictly for the Rental/lease agreement. All tenants are responsible for their own personal injury, casualty and loss liability insurance. Also, kindly indicate the best form of contact for you. By submitting this form I confirm that the information provided herein is true and correct.
                 </p>
-                <p className="font-bold text-[#1f4e78]">
-                    Hosts: Dominic Carew & Paul Nye
+                <p className="font-semibold text-gray-700 mt-2">
+                    <strong>Hosts:</strong> Dominic Carew & Paul Nye
                 </p>
             </div>
 
@@ -187,7 +162,6 @@ const Form1Section = () => {
                 </div>
                 <div className="bg-white border-x border-b border-gray-300 rounded-b-md p-6 mb-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                        {/* Booking ID & Submit */}
                         <div className="md:col-span-1">
                             <label className={labelClasses}>Booking Id <span className="text-red-500">*</span></label>
                             <div className="flex gap-2">
@@ -205,12 +179,11 @@ const Form1Section = () => {
                                     onClick={handleBookingSubmit}
                                     className="bg-[#2a5d88] hover:bg-[#1f4565] text-white font-bold text-xs px-4 py-2.5 rounded-md transition-colors cursor-pointer uppercase shrink-0"
                                 >
-                                    Submit
+                                    SUBMIT
                                 </button>
                             </div>
                         </div>
 
-                        {/* Email Address */}
                         <div>
                             <label className={labelClasses}>Email Address <span className="text-red-500">*</span></label>
                             <input
@@ -224,48 +197,47 @@ const Form1Section = () => {
                             />
                         </div>
 
-                        {/* Today Date */}
                         <div>
                             <label className={labelClasses}>Today Date <span className="text-red-500">*</span></label>
-                            <input
-                                type="date"
-                                name="todayDate"
-                                required
-                                value={formData.todayDate}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.todayDate)}
+                                onChange={(date) => handleDatePickerChange(date, 'todayDate')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
+                                required
                             />
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                        {/* Check In */}
                         <div>
                             <label className={labelClasses}>Check In <span className="text-red-500">*</span></label>
-                            <input
-                                type="date"
-                                name="checkIn"
-                                required
-                                value={formData.checkIn}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.checkIn)}
+                                onChange={(date) => handleDatePickerChange(date, 'checkIn')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
+                                required
                             />
                         </div>
 
-                        {/* Check Out */}
                         <div>
                             <label className={labelClasses}>Check Out <span className="text-red-500">*</span></label>
-                            <input
-                                type="date"
-                                name="checkOut"
-                                required
-                                value={formData.checkOut}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.checkOut)}
+                                onChange={(date) => handleDatePickerChange(date, 'checkOut')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
+                                required
                             />
                         </div>
 
-                        {/* Full Name */}
                         <div>
                             <label className={labelClasses}>Full Name of Guest <span className="text-red-500">*</span></label>
                             <input
@@ -281,20 +253,19 @@ const Form1Section = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                        {/* Date of Birth */}
                         <div>
                             <label className={labelClasses}>Date of Birth <span className="text-red-500">*</span></label>
-                            <input
-                                type="date"
-                                name="dateOfBirth"
-                                required
-                                value={formData.dateOfBirth}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.dateOfBirth)}
+                                onChange={(date) => handleDatePickerChange(date, 'dateOfBirth')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
+                                required
                             />
                         </div>
 
-                        {/* Address of Guest */}
                         <div className="md:col-span-2">
                             <label className={labelClasses}>Address of Guest <span className="text-red-500">*</span></label>
                             <textarea
@@ -310,7 +281,6 @@ const Form1Section = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-                        {/* City */}
                         <div>
                             <label className={labelClasses}>City <span className="text-red-500">*</span></label>
                             <input
@@ -324,7 +294,6 @@ const Form1Section = () => {
                             />
                         </div>
 
-                        {/* State */}
                         <div>
                             <label className={labelClasses}>State <span className="text-red-500">*</span></label>
                             <input
@@ -333,12 +302,11 @@ const Form1Section = () => {
                                 required
                                 value={formData.state}
                                 onChange={handleChange}
-                                placeholder="State Name"
+                                placeholder="state Name"
                                 className={inputClasses}
                             />
                         </div>
 
-                        {/* Zip Code */}
                         <div>
                             <label className={labelClasses}>Zip Code <span className="text-red-500">*</span></label>
                             <input
@@ -352,7 +320,6 @@ const Form1Section = () => {
                             />
                         </div>
 
-                        {/* Country */}
                         <div>
                             <label className={labelClasses}>Country <span className="text-red-500">*</span></label>
                             <select
@@ -374,7 +341,6 @@ const Form1Section = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {/* Occupation */}
                         <div>
                             <label className={labelClasses}>Occupation <span className="text-red-500">*</span></label>
                             <input
@@ -388,7 +354,6 @@ const Form1Section = () => {
                             />
                         </div>
 
-                        {/* Work Duration */}
                         <div>
                             <label className={labelClasses}>Work duration <span className="text-red-500">*</span></label>
                             <div className="grid grid-cols-2 gap-2">
@@ -413,7 +378,6 @@ const Form1Section = () => {
                             </div>
                         </div>
 
-                        {/* Upload ID */}
                         <div>
                             <label className={labelClasses}>Upload Govt. Issued ID with photograph <span className="text-red-500">*</span></label>
                             <input
@@ -436,7 +400,6 @@ const Form1Section = () => {
                 </div>
                 <div className="bg-white border-x border-b border-gray-300 rounded-b-md p-6 mb-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                        {/* Home */}
                         <div>
                             <label className={labelClasses}>Home <span className="text-red-500">*</span></label>
                             <input
@@ -450,7 +413,6 @@ const Form1Section = () => {
                             />
                         </div>
 
-                        {/* Cell */}
                         <div>
                             <label className={labelClasses}>Cell <span className="text-red-500">*</span></label>
                             <input
@@ -464,7 +426,6 @@ const Form1Section = () => {
                             />
                         </div>
 
-                        {/* Email Address */}
                         <div>
                             <label className={labelClasses}>E-mail Address <span className="text-red-500">*</span></label>
                             <input
@@ -480,9 +441,8 @@ const Form1Section = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {/* Preferred Method of Contact */}
                         <div>
-                            <label className={labelClasses}>Preferred Method of Contact <span className="text-red-500">*</span></label>
+                            <label className={labelClasses}>Prefered Method of Contact <span className="text-red-500">*</span></label>
                             <select
                                 name="preferredContact"
                                 required
@@ -491,13 +451,13 @@ const Form1Section = () => {
                                 className={`${inputClasses} bg-white cursor-pointer h-[42px]`}
                             >
                                 <option value="">Select Method</option>
+                                <option value="Phone">Phone</option>
                                 <option value="Email">Email</option>
-                                <option value="Cell Phone">Cell Phone</option>
-                                <option value="Home Phone">Home Phone</option>
+
+
                             </select>
                         </div>
 
-                        {/* Questions, Comments */}
                         <div className="md:col-span-2">
                             <label className={labelClasses}>Questions, Comments</label>
                             <textarea
@@ -518,7 +478,6 @@ const Form1Section = () => {
                 </div>
                 <div className="bg-white border-x border-b border-gray-300 rounded-b-md p-6 mb-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {/* Passport No */}
                         <div>
                             <label className={labelClasses}>Passport No <span className="text-red-500">*</span></label>
                             <input
@@ -532,7 +491,6 @@ const Form1Section = () => {
                             />
                         </div>
 
-                        {/* Country of issue */}
                         <div>
                             <label className={labelClasses}>Country of issue <span className="text-red-500">*</span></label>
                             <input
@@ -546,16 +504,16 @@ const Form1Section = () => {
                             />
                         </div>
 
-                        {/* Expiry Date */}
                         <div>
                             <label className={labelClasses}>Expiry Date <span className="text-red-500">*</span></label>
-                            <input
-                                type="date"
-                                name="passportExpiry"
-                                required
-                                value={formData.passportExpiry}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.passportExpiry)}
+                                onChange={(date) => handleDatePickerChange(date, 'passportExpiry')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
+                                required
                             />
                         </div>
                     </div>
@@ -603,12 +561,13 @@ const Form1Section = () => {
                         </div>
                         <div>
                             <label className={labelClasses}>Vaccination Date</label>
-                            <input
-                                type="date"
-                                name="petVacDate1"
-                                value={formData.petVacDate1}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.petVacDate1)}
+                                onChange={(date) => handleDatePickerChange(date, 'petVacDate1')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
                             />
                         </div>
                     </div>
@@ -650,12 +609,13 @@ const Form1Section = () => {
                         </div>
                         <div>
                             <label className={labelClasses}>Vaccination Date</label>
-                            <input
-                                type="date"
-                                name="petVacDate2"
-                                value={formData.petVacDate2}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.petVacDate2)}
+                                onChange={(date) => handleDatePickerChange(date, 'petVacDate2')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
                             />
                         </div>
                     </div>
@@ -725,7 +685,6 @@ const Form1Section = () => {
                 </div>
                 <div className="bg-white border-x border-b border-gray-300 rounded-b-md p-6 mb-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                        {/* Address of Guest */}
                         <div className="md:col-span-2">
                             <label className={labelClasses}>Address of Guest <span className="text-red-500">*</span></label>
                             <textarea
@@ -740,7 +699,6 @@ const Form1Section = () => {
                             />
                         </div>
 
-                        {/* City */}
                         <div>
                             <label className={labelClasses}>City <span className="text-red-500">*</span></label>
                             <input
@@ -757,7 +715,6 @@ const Form1Section = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {/* State */}
                         <div>
                             <label className={labelClasses}>State <span className="text-red-500">*</span></label>
                             <input
@@ -772,7 +729,6 @@ const Form1Section = () => {
                             />
                         </div>
 
-                        {/* Zip Code */}
                         <div>
                             <label className={labelClasses}>Zip Code <span className="text-red-500">*</span></label>
                             <input
@@ -787,7 +743,6 @@ const Form1Section = () => {
                             />
                         </div>
 
-                        {/* Country */}
                         <div>
                             <label className={labelClasses}>Country <span className="text-red-500">*</span></label>
                             <select
@@ -816,7 +771,6 @@ const Form1Section = () => {
                 </div>
                 <div className="bg-white border-x border-b border-gray-300 rounded-b-md p-6 mb-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        {/* Where stayed before */}
                         <div>
                             <label className={labelClasses}>Where have you stayed before in Provincetown? <span className="text-red-500">*</span></label>
                             <input
@@ -830,7 +784,6 @@ const Form1Section = () => {
                             />
                         </div>
 
-                        {/* Name, number, address of owner */}
                         <div>
                             <label className={labelClasses}>Name, number, and address of owner <span className="text-red-500">*</span></label>
                             <input
@@ -846,7 +799,6 @@ const Form1Section = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* Invited Back */}
                         <div>
                             <label className={labelClasses}>Have you been invited back? <span className="text-red-500">*</span></label>
                             <select
@@ -862,7 +814,6 @@ const Form1Section = () => {
                             </select>
                         </div>
 
-                        {/* How Did You Hear */}
                         <div>
                             <label className={labelClasses}>How Did You Hear About Us? <span className="text-red-500">*</span></label>
                             <select
@@ -873,9 +824,18 @@ const Form1Section = () => {
                                 className={`${inputClasses} bg-white cursor-pointer h-[42px]`}
                             >
                                 <option value="">select option</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Vacationrental.com">Vacationrental.com</option>
+                                <option value="Capecodvacationrentals.com">Capecodvacationrentals.com</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Vacationhomerentals.com">Vacationhomerentals.com</option>
+                                <option value="Homeaway.com">Homeaway.com</option>
+                                <option value="Cyberrentals.com">Cyberrentals.com</option>
+                                <option value="Pettravel.com">Pettravel.com</option>
                                 <option value="Google Search">Google Search</option>
-                                <option value="Friend/Family">Friend/Family</option>
-                                <option value="Social Media">Social Media</option>
+                                <option value="Yahoo Search">Yahoo Search</option>
+                                <option value="Friend Referral">Friend Referral</option>
+                                <option value="Word of Mouth">Word of Mouth</option>
                                 <option value="Other">Other</option>
                             </select>
                         </div>
@@ -927,21 +887,21 @@ const Form1Section = () => {
                             type="submit"
                             className="bg-[#2a5d88] hover:bg-[#1f4565] text-white font-bold text-sm px-8 py-3 rounded shadow transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer uppercase"
                         >
-                            Submit
+                            SUBMIT
                         </button>
                         <button
                             type="button"
                             onClick={handlePrint}
                             className="bg-[#2a5d88] hover:bg-[#1f4565] text-white font-bold text-sm px-8 py-3 rounded shadow transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer uppercase"
                         >
-                            Print
+                            PRINT
                         </button>
                         <button
                             type="button"
                             onClick={handleReset}
                             className="bg-[#2a5d88] hover:bg-[#1f4565] text-white font-bold text-sm px-8 py-3 rounded shadow transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer uppercase"
                         >
-                            Reset
+                            RESET
                         </button>
                     </div>
                     <p className="text-[#f15a24] font-bold text-sm mt-2">

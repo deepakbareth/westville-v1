@@ -56,8 +56,8 @@ function App() {
           <Route path="/westville-v1/westville-documents" element={<WestvilleDocuments />} />
           <Route path="/westville-v1/testimonials" element={<TestimonialsPage />} />
           <Route path="/westville-v1/faqs" element={<FAQs />} />
-          {/* <Route path="/westville-v1/form1" element={<Form1 />} />
-          <Route path="/westville-v1/form2" element={<Form2 />} /> */}
+          <Route path="/westville-v1/form1" element={<Form1 />} />
+          <Route path="/westville-v1/form2" element={<Form2 />} />
 
           {/* === NESTED ROUTES FOR P-TOWN === */}
           {/* Parent Route me PTownLayout lagaya */}
