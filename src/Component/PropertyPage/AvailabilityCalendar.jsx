@@ -306,9 +306,16 @@ const AvailabilityCalendar = () => {
                                         <label className="font-semibold text-sm">Name</label>
                                         <input type="text" required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#df9b29]" />
                                     </div>
-                                    <div className="flex flex-col gap-1">
-                                        <label className="font-semibold text-sm">Email</label>
-                                        <input type="email" required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#df9b29]" />
+                                    {/* Email and Phone side-by-side */}
+                                    <div className="grid grid-cols-2 gap-3">
+                                        <div className="flex flex-col gap-1">
+                                            <label className="font-semibold text-sm">Email</label>
+                                            <input type="email" required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#df9b29]" />
+                                        </div>
+                                        <div className="flex flex-col gap-1">
+                                            <label className="font-semibold text-sm">Phone</label>
+                                            <input type="tel" required className="p-2 border border-gray-300 rounded-md outline-none focus:border-[#df9b29]" />
+                                        </div>
                                     </div>
                                     
                                     {/* Adults and Pets side-by-side */}
