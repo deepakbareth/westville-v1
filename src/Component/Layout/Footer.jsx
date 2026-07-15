@@ -87,7 +87,7 @@ const Footer = () => {
                     </p>
                     <div>
                         <Link
-                            to="/westville-v1/#faqs"
+                            to="/westville-v1/faqs"
                             className="inline-block bg-[#df9b29] hover:bg-[#c48824] text-black font-semibold text-[13px] px-8 py-3.5 tracking-[0.05em] uppercase transition-all duration-300 transform hover:-translate-y-1 shadow-sm rounded-sm cursor-pointer"
                         >
                             FAQS
@@ -103,10 +103,10 @@ const Footer = () => {
 
                     {/* Bottom Links */}
                     <div className="flex flex-wrap justify-center gap-x-6 md:gap-x-8 gap-y-2 md:gap-y-3">
-                        <a href="blogs" className="hover:text-[#c38b31] transition-colors">Blogs</a>
-                        <Link to="/westville-v1/form1" className="hover:text-[#c38b31] transition-colors">Form 1</Link>
-                        <Link to="/westville-v1/form2" className="hover:text-[#c38b31] transition-colors">Form 2</Link>
-                        <a href="#accessibility" className="hover:text-[#c38b31] transition-colors">Accessibility</a>
+                        <Link to="/westville-v1/#blogs" className="hover:text-[#c38b31] transition-colors">Blogs</Link>
+                        <Link to="/westville-v1/#form1" className="hover:text-[#c38b31] transition-colors">Form 1</Link>
+                        <Link to="/westville-v1/#form2" className="hover:text-[#c38b31] transition-colors">Form 2</Link>
+                        <Link to="/westville-v1/#accessibility" className="hover:text-[#c38b31] transition-colors">Accessibility</Link>
                     </div>
 
                     {/* Copyright */}
