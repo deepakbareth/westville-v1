@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { format, parse, isValid } from 'date-fns';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { Link } from 'react-router-dom';
 
 const Form2Section = () => {
     const [formData, setFormData] = useState({
@@ -1258,7 +1259,7 @@ const Form2Section = () => {
                             onChange={handleChange}
                             className="w-4 h-4 rounded text-[#2a5d88] focus:ring-0 mt-0.5"
                         />
-                        <span>I have read and agree with the <a href="#terms" className="text-[#2a5d88] hover:underline font-bold">Terms and Conditions</a> and the Westville Cottage’s <a href="#privacy" className="text-[#2a5d88] hover:underline font-bold">Privacy Policy</a>. <span className="text-red-500">*</span></span>
+                        <span>I have read and agree with the <Link to="/westville-v1/terms-and-conditions" className="text-[#2a5d88] hover:underline font-bold">Terms and Conditions</Link> and the Westville Cottage’s <a href="#privacy" className="text-[#2a5d88] hover:underline font-bold">Privacy Policy</a>. <span className="text-red-500">*</span></span>
                     </label>
                 </div>
 
