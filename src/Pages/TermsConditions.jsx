@@ -8,7 +8,7 @@ function TermsConditions() {
             <PageBanner title="Terms & Conditions" />
             <WestvilleCottage />
 
-            <div className="max-w-[1000px] mx-auto px-6 md:px-8 mt-12">
+            <div className="max-w-[1200px] mx-auto px-6 md:px-8 mt-12">
                 <div className="bg-white border border-gray-300 rounded-lg p-8 md:p-12 shadow-sm text-left leading-relaxed text-gray-700 space-y-8">
 
                     <div>
