@@ -358,7 +358,7 @@ const Form1Section = () => {
                             <label className={labelClasses}>Work duration <span className="text-red-500">*</span></label>
                             <div className="grid grid-cols-2 gap-2">
                                 <input
-                                    type="text"
+                                    type="number"
                                     name="workYears"
                                     required
                                     value={formData.workYears}
@@ -367,7 +367,7 @@ const Form1Section = () => {
                                     className={inputClasses}
                                 />
                                 <input
-                                    type="text"
+                                    type="number"
                                     name="workMonths"
                                     required
                                     value={formData.workMonths}

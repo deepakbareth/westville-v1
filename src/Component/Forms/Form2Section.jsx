@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { format, parse, isValid } from 'date-fns';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const Form2Section = () => {
     const [formData, setFormData] = useState({
@@ -90,6 +93,23 @@ const Form2Section = () => {
             ...prev,
             [name]: type === 'checkbox' ? checked : value
         }));
+    };
+
+    const parseDateString = (val) => {
+        if (!val) return null;
+        let parsed = parse(val, 'MM/dd/yy', new Date());
+        if (isValid(parsed)) return parsed;
+        parsed = parse(val, 'MM/dd/yyyy', new Date());
+        if (isValid(parsed)) return parsed;
+        return null;
+    };
+
+    const handleDatePickerChange = (date, name) => {
+        if (!date) {
+            setFormData(prev => ({ ...prev, [name]: '' }));
+        } else {
+            setFormData(prev => ({ ...prev, [name]: format(date, 'MM/dd/yy') }));
+        }
     };
 
     const handleFileChange = (e, fieldName) => {
@@ -212,11 +232,11 @@ const Form2Section = () => {
         }
     };
 
-    const inputClasses = "w-full bg-white border border-gray-300 rounded-md py-2 px-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#df9b29] transition-all text-sm font-raleway";
+    const inputClasses = "w-full bg-white border border-gray-300 rounded-md py-2 px-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#df9b29] transition-all text-sm font-helvetica";
     const labelClasses = "block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1";
 
     return (
-        <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-10 font-raleway text-gray-800">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-10 font-helvetica text-gray-800">
             {/* NOTICE CONTAINER */}
             <div className="bg-[#f5f5f5] border border-gray-300 p-6 rounded-lg mb-8 text-left text-sm leading-relaxed text-gray-700">
                 <h3 className="text-xl font-bold text-gray-900 border-b border-gray-300 pb-2 mb-3 text-center uppercase tracking-wide">
@@ -225,8 +245,8 @@ const Form2Section = () => {
                 <p className="mb-3">
                     <strong>Notice to the Guest(s):</strong> Thank you for your interest in booking the Westville Cottage for your vacation getaway to Provincetown. Please take a moment to complete this information for each Guest, including pets if applicable. Please note, prior to occupancy, owners must provide proof of vaccination and confirm application of flea and tick repellent. The information requested will be used strictly for the Rental/lease agreement. All tenants are responsible for their own personal injury, casualty and loss liability insurance. Also, kindly indicate the best form of contact for you. By submitting this form I/we confirm that the information provided herein is true and correct.
                 </p>
-                <p className="font-bold text-[#1f4e78]">
-                    Hosts: Dominic Carew & Paul Nye
+                <p className="font-semibold text-gray-700 mt-2">
+                    <strong>Hosts:</strong> Dominic Carew & Paul Nye
                 </p>
             </div>
 
@@ -256,7 +276,7 @@ const Form2Section = () => {
                                     onClick={handleBookingSubmit}
                                     className="bg-[#2a5d88] hover:bg-[#1f4565] text-white font-bold text-xs px-4 py-2.5 rounded-md transition-colors cursor-pointer uppercase shrink-0"
                                 >
-                                    Submit
+                                    SUBMIT
                                 </button>
                             </div>
                         </div>
@@ -278,13 +298,14 @@ const Form2Section = () => {
                         {/* Today Date */}
                         <div>
                             <label className={labelClasses}>Today Date <span className="text-red-500">*</span></label>
-                            <input
-                                type="date"
-                                name="todayDate"
-                                required
-                                value={formData.todayDate}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.todayDate)}
+                                onChange={(date) => handleDatePickerChange(date, 'todayDate')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
+                                required
                             />
                         </div>
                     </div>
@@ -293,26 +314,28 @@ const Form2Section = () => {
                         {/* Check In */}
                         <div>
                             <label className={labelClasses}>Check In <span className="text-red-500">*</span></label>
-                            <input
-                                type="date"
-                                name="checkIn"
-                                required
-                                value={formData.checkIn}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.checkIn)}
+                                onChange={(date) => handleDatePickerChange(date, 'checkIn')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
+                                required
                             />
                         </div>
 
                         {/* Check Out */}
                         <div>
                             <label className={labelClasses}>Check Out <span className="text-red-500">*</span></label>
-                            <input
-                                type="date"
-                                name="checkOut"
-                                required
-                                value={formData.checkOut}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.checkOut)}
+                                onChange={(date) => handleDatePickerChange(date, 'checkOut')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
+                                required
                             />
                         </div>
 
@@ -327,9 +350,8 @@ const Form2Section = () => {
                                 className={`${inputClasses} bg-white cursor-pointer h-[42px]`}
                             >
                                 <option value="">Select Method</option>
+                                <option value="Phone">Phone</option>
                                 <option value="Email">Email</option>
-                                <option value="Cell Phone">Cell Phone</option>
-                                <option value="Home Phone">Home Phone</option>
                             </select>
                         </div>
                     </div>
@@ -358,13 +380,14 @@ const Form2Section = () => {
                         {/* DOB */}
                         <div>
                             <label className={labelClasses}>Date of Birth <span className="text-red-500">*</span></label>
-                            <input
-                                type="date"
-                                name="g1DateOfBirth"
-                                required
-                                value={formData.g1DateOfBirth}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.g1DateOfBirth)}
+                                onChange={(date) => handleDatePickerChange(date, 'g1DateOfBirth')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
+                                required
                             />
                         </div>
                     </div>
@@ -499,7 +522,7 @@ const Form2Section = () => {
                             <label className={labelClasses}>Work duration <span className="text-red-500">*</span></label>
                             <div className="grid grid-cols-2 gap-2">
                                 <input
-                                    type="text"
+                                    type="number"
                                     name="g1WorkYears"
                                     required
                                     value={formData.g1WorkYears}
@@ -508,7 +531,7 @@ const Form2Section = () => {
                                     className={inputClasses}
                                 />
                                 <input
-                                    type="text"
+                                    type="number"
                                     name="g1WorkMonths"
                                     required
                                     value={formData.g1WorkMonths}
@@ -585,13 +608,14 @@ const Form2Section = () => {
                         {/* DOB */}
                         <div>
                             <label className={labelClasses}>Date of Birth <span className="text-red-500">*</span></label>
-                            <input
-                                type="date"
-                                name="g2DateOfBirth"
-                                required
-                                value={formData.g2DateOfBirth}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.g2DateOfBirth)}
+                                onChange={(date) => handleDatePickerChange(date, 'g2DateOfBirth')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
+                                required
                             />
                         </div>
                     </div>
@@ -726,7 +750,7 @@ const Form2Section = () => {
                             <label className={labelClasses}>Work duration <span className="text-red-500">*</span></label>
                             <div className="grid grid-cols-2 gap-2">
                                 <input
-                                    type="text"
+                                    type="number"
                                     name="g2WorkYears"
                                     required
                                     value={formData.g2WorkYears}
@@ -735,7 +759,7 @@ const Form2Section = () => {
                                     className={inputClasses}
                                 />
                                 <input
-                                    type="text"
+                                    type="number"
                                     name="g2WorkMonths"
                                     required
                                     value={formData.g2WorkMonths}
@@ -812,13 +836,14 @@ const Form2Section = () => {
                         {/* Expiry Date Guest 1 */}
                         <div>
                             <label className={labelClasses}>Expiry Date for Guest 1. <span className="text-red-500">*</span></label>
-                            <input
-                                type="date"
-                                name="g1PassportExpiry"
-                                required
-                                value={formData.g1PassportExpiry}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.g1PassportExpiry)}
+                                onChange={(date) => handleDatePickerChange(date, 'g1PassportExpiry')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
+                                required
                             />
                         </div>
                     </div>
@@ -855,13 +880,14 @@ const Form2Section = () => {
                         {/* Expiry Date Guest 2 */}
                         <div>
                             <label className={labelClasses}>Expiry Date for Guest 2. <span className="text-red-500">*</span></label>
-                            <input
-                                type="date"
-                                name="g2PassportExpiry"
-                                required
-                                value={formData.g2PassportExpiry}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.g2PassportExpiry)}
+                                onChange={(date) => handleDatePickerChange(date, 'g2PassportExpiry')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
+                                required
                             />
                         </div>
                     </div>
@@ -1058,12 +1084,13 @@ const Form2Section = () => {
                         </div>
                         <div>
                             <label className={labelClasses}>Vaccination Date</label>
-                            <input
-                                type="date"
-                                name="petVacDate1"
-                                value={formData.petVacDate1}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.petVacDate1)}
+                                onChange={(date) => handleDatePickerChange(date, 'petVacDate1')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
                             />
                         </div>
                     </div>
@@ -1105,12 +1132,13 @@ const Form2Section = () => {
                         </div>
                         <div>
                             <label className={labelClasses}>Vaccination Date</label>
-                            <input
-                                type="date"
-                                name="petVacDate2"
-                                value={formData.petVacDate2}
-                                onChange={handleChange}
+                            <DatePicker
+                                selected={parseDateString(formData.petVacDate2)}
+                                onChange={(date) => handleDatePickerChange(date, 'petVacDate2')}
+                                placeholderText="MM/DD/YY"
+                                dateFormat="MM/dd/yy"
                                 className={inputClasses}
+                                wrapperClassName="w-full"
                             />
                         </div>
                     </div>
@@ -1178,9 +1206,18 @@ const Form2Section = () => {
                                 className={`${inputClasses} bg-white cursor-pointer h-[42px]`}
                             >
                                 <option value="">select option</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Vacationrental.com">Vacationrental.com</option>
+                                <option value="Capecodvacationrentals.com">Capecodvacationrentals.com</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Vacationhomerentals.com">Vacationhomerentals.com</option>
+                                <option value="Homeaway.com">Homeaway.com</option>
+                                <option value="Cyberrentals.com">Cyberrentals.com</option>
+                                <option value="Pettravel.com">Pettravel.com</option>
                                 <option value="Google Search">Google Search</option>
-                                <option value="Friend/Family">Friend/Family</option>
-                                <option value="Social Media">Social Media</option>
+                                <option value="Yahoo Search">Yahoo Search</option>
+                                <option value="Friend Referral">Friend Referral</option>
+                                <option value="Word of Mouth">Word of Mouth</option>
                                 <option value="Other">Other</option>
                             </select>
                         </div>
@@ -1232,21 +1269,21 @@ const Form2Section = () => {
                             type="submit"
                             className="bg-[#2a5d88] hover:bg-[#1f4565] text-white font-bold text-sm px-8 py-3 rounded shadow transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer uppercase"
                         >
-                            Submit
+                            SUBMIT
                         </button>
                         <button
                             type="button"
                             onClick={handlePrint}
                             className="bg-[#2a5d88] hover:bg-[#1f4565] text-white font-bold text-sm px-8 py-3 rounded shadow transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer uppercase"
                         >
-                            Print
+                            PRINT
                         </button>
                         <button
                             type="button"
                             onClick={handleReset}
                             className="bg-[#2a5d88] hover:bg-[#1f4565] text-white font-bold text-sm px-8 py-3 rounded shadow transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer uppercase"
                         >
-                            Reset
+                            RESET
                         </button>
                     </div>
                     <p className="text-[#f15a24] font-bold text-sm mt-2">
