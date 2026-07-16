@@ -2,7 +2,7 @@ import React from 'react';
 
 const LocationMap = () => {
     return (
-        <section className="scroll-mt-24 space-y-6 py-20">
+        <section id='LocationMap' className="scroll-mt-24 space-y-6 py-20">
 
             {/* Standardized Header */}
             <div>

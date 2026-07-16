@@ -170,7 +170,7 @@ const BookingForm = () => {
                 </form>
 
                 <div className="text-[12px] font-raleway text-gray-600 text-center leading-relaxed mt-2">
-                    We will only use your info to handle your inquiry.
+                    We will only use your info to process your booking.
                 </div>
             </div>
         </div>

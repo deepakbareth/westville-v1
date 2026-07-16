@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const FAQsSection = () => {
     // Accordion active index (null means all closed, initially item 0 is open)
@@ -28,20 +29,21 @@ const FAQsSection = () => {
                     <p>
                         We are not currently on the water, but in a few years with the global warming trends, we will be...just kidding. We are located minutes from the water. You can have sand in your sandals or under your feet or completely submerged underwater in a short 5-minute walk to the town beach.
                     </p>
+                    <Link to='/westville-v1/the-cottage#LocationMap' className="cursor-pointer bg-[#df9b29] hover:bg-[#d48c20] transition-colors duration-300  text-black px-4 py-2 rounded-md">Find Us Here</Link>
                 </div>
             )
         },
-        {
-            question: "Why No Street Address",
-            answer: (
-                <div className="space-y-4">
-                    <p className="font-semibold text-gray-800">Why Don't You Post A Street Address For The Westville?</p>
-                    <p>
-                        We do not post our address for the safety and security of our guests and our property. Although we have a property manager, for a few months of the year, Westville is unoccupied and can easily be a target for idle hands. We will tell you the blocks of our location, but until we know that you are a serious potential guest, our street address remains confidential.
-                    </p>
-                </div>
-            )
-        },
+        // {
+        //     question: "Why No Street Address",
+        //     answer: (
+        //         <div className="space-y-4">
+        //             <p className="font-semibold text-gray-800">Why Don't You Post A Street Address For The Westville?</p>
+        //             <p>
+        //                 We do not post our address for the safety and security of our guests and our property. Although we have a property manager, for a few months of the year, Westville is unoccupied and can easily be a target for idle hands. We will tell you the blocks of our location, but until we know that you are a serious potential guest, our street address remains confidential.
+        //             </p>
+        //         </div>
+        //     )
+        // },
         {
             question: "Our Season",
             answer: (
@@ -63,7 +65,7 @@ const FAQsSection = () => {
             answer: (
                 <div className="space-y-4">
                     <p>
-                        The form is only required for all first-time guests, or if there are changes to record since your last visit. We prepare a lease agreement for every vacation. The lease agreement is an enforceable document in a court of law. It protects both parties... the hosts and the guests. You know exactly what you're getting... no surprises.
+                        The form is required for all guests, and if there are changes to record since your last visit. We prepare a lease agreement for every vacation. The lease agreement is an enforceable document in a court of law. It protects both parties... the hosts and the guests. You know exactly what you're getting... no surprises.
                     </p>
                     <p>
                         Additionally, we have candidly shared our lives throughout this website especially in the "Your Hosts" section, therefore it is only fitting that we get to know who you are. If you are uncomfortable sharing, then we are uncomfortable opening our home to you. Provincetown has a place for everyone, with many other types of rentals that may meet your needs. Feel free to visit other vacation rentals and inquire about availability. Maybe their lack of concern would serve as a better fit for you and your hard-earned vacation dollars. Remember you get what you pay for!
@@ -77,16 +79,16 @@ const FAQsSection = () => {
                 <div className="space-y-4">
                     <p className="font-semibold text-gray-800">A reservation at the Westville Cottage comes complete with the following:</p>
                     <ul className="space-y-1">
-                        <li>• 680 thread count bedding</li>
+                        <li>• Bed Linens</li>
                         <li>• Turkish luxury towels</li>
                         <li>• Dishwasher tabs</li>
                         <li>• Beach accessories</li>
                         <li>• Two(2) adult-size mountain bicycles</li>
+                        <li>• Shampoo, Conditioner & Bodywash</li>
                     </ul>
                     <p className="font-semibold text-gray-800">Also, we provide a starter supply of sundries:</p>
                     <ul className="space-y-1">
-                        <li>• Shampoo</li>
-                        <li>• Body wash</li>
+
                         <li>• Paper towels</li>
                         <li>• Toilet paper</li>
                         <li>• Trash bags</li>
@@ -163,7 +165,7 @@ const FAQsSection = () => {
             question: "Non-Smoking Policy",
             answer: (
                 <div className="space-y-3">
-                    <p className="font-semibold text-gray-800">Our home is completely smoke-free.</p>
+                    <p className="font-semibold text-gray-800">Our home is completely smoke-free. Meaning no cigarettes, cigars, vapes and similar  devices.</p>
                     <p>
                         Any violations will result in a damage assessment to decontaminate the premises. We would like all guests to experience the Westville Cottage just as you have, allergic reactions due to smoke pollutants can be deadly to some. Please be courteous to other guests by not smoking. We appreciate your cooperation.
                     </p>
@@ -175,15 +177,15 @@ const FAQsSection = () => {
             answer: (
                 <div className="space-y-4">
                     <p>
-                        Although a cleaning fee is added to all rentals, guests are required to leave the premises as well as they found it. There are "checking out" guidelines located onsite for your reference. If you are not willing to clean up after yourself, then guests might opt to include an additional cleaning fee of $250.00, or it will be deducted from the security deposit.
+                        Although a cleaning fee is added to all rentals, guests are required to leave the premises as well as they found it. There are "checking out" guidelines located onsite and online for your reference. If you are not willing to clean up after yourself, then guests might opt to include an additional cleaning fee of $250.00, or it will be deducted from the security deposit.
                     </p>
                     <p>
                         Guests are asked to broom sweep before departure. Broom sweep is standard industry lingua for "don't be a slob." As a courtey to incoming guests and housekeeping staff, existing guests are strongly encouraged to leave the property tidy. On-site there is a vacuum cleaner with a pet hair/removal device attachment. We encourage all guests to use the vacuum even if they did not vacation with your pet. You will be surprised to see what comes at you. If you would like a daily maid or turn down service, please inquire, we can arrange for such at an additional cost to you.
                     </p>
                     <p className="font-semibold text-gray-800">Extended Stays (14 days or more) are subject to:</p>
                     <ol className="list-decimal pl-5 space-y-1">
-                        <li>Interim cleaning</li>
-                        <li>Addiitonal cleaning fee, professional deep cleaning service maybe apply.</li>
+                        <li>Interim cleaning fee applies</li>
+                        <li>Addiitonal cleaning fee, professional deep cleaning service maybe apply (inquire for more details).</li>
                     </ol>
                 </div>
             )
@@ -193,7 +195,7 @@ const FAQsSection = () => {
             answer: (
                 <div className="space-y-4">
                     <p>
-                        We love our pets and welcome yours to stay here as long as they are well behaved and relatively quiet (dogs do bark!), and housebroken (no pee-pee/poo pads). We accept non-shedding breeds only, with a maximum weight of 75lbs. We ask that you clean up after your pet both inside and outside and please walk your pet off-property. You are also responsible for watching over and/or containing your pet at all times.
+                        We love our pets and welcome yours to stay here as long as they are well behaved and relatively quiet (dogs do bark!), and housebroken (no pee-pee/poo pads). We accept non-shedding breeds only, with a maximum weight of 75lbs. We ask that you clean up after your pet both inside and outside and please walk your pet off-property. You are also responsible for watching over and/or containing your pet at all times. From time to time, we accept shedding breeds. If so, you have the added responsibility of vacuuming daily to minimize the dander left behind in the home.
                     </p>
                     <p className="font-semibold text-gray-800">Can Rover go potty or pee-pee in the garden?</p>
                     <p>
