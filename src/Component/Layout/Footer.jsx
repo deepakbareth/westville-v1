@@ -106,7 +106,7 @@ const Footer = () => {
                         <Link to="/westville-v1/#blogs" className="hover:text-[#c38b31] transition-colors">Blogs</Link>
                         <Link to="/westville-v1/form1" className="hover:text-[#c38b31] transition-colors">Form 1</Link>
                         <Link to="/westville-v1/form2" className="hover:text-[#c38b31] transition-colors">Form 2</Link>
-                        <Link to="/westville-v1/#accessibility" className="hover:text-[#c38b31] transition-colors">Accessibility</Link>
+                        <Link to="/westville-v1/accessibility" className="hover:text-[#c38b31] transition-colors">Accessibility</Link>
                     </div>
 
                     {/* Copyright */}

@@ -35,6 +35,7 @@ const Form1 = lazy(() => import('./Pages/Form1'))
 const Form2 = lazy(() => import('./Pages/Form2'))
 const TermsConditions = lazy(() => import('./Pages/TermsConditions'))
 const PrivacyPolicy = lazy(() => import('./Pages/PrivacyPolicy'))
+const Accessibility = lazy(() => import('./Pages/Accessibility'))
 
 // Dummy pages for sub-links (Aap baad me inki real files bana kar import kar lena)
 // const Attractionse = () => <div className="py-20 text-center text-2xl">Attractions Content Here</div>;
@@ -62,6 +63,7 @@ function App() {
           <Route path="/westville-v1/form2" element={<Form2 />} />
           <Route path="/westville-v1/terms-and-conditions" element={<TermsConditions />} />
           <Route path="/westville-v1/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/westville-v1/accessibility" element={<Accessibility />} />
 
           {/* === NESTED ROUTES FOR P-TOWN === */}
           {/* Parent Route me PTownLayout lagaya */}
