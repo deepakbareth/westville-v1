@@ -52,6 +52,10 @@ const TestimonialCard = ({ item }) => {
 function TestimonialsPage() {
     const testimonials = [
         {
+            text: "We can't say enough good things about the place! Loved the private patio and green space, made for lovely evenings with a glass of wine to end the day. The neighborhood is quiet and friendly and it's close to everything. Highly recommend!",
+            author: "Airbnb Guest"
+        },
+        {
             text: "We had a fantastic 7 night stay! The location was perfect and close to everything while still nestled in a charming, quiet neighborhood. The property was easy to access, with convenient parking that made coming and going effortless. The communication before and during the stay was exceptional. The home was beautifully appointed, exceptionally clean, and thoughtfully updated with modern upgrades throughout. It had everything we needed for a comfortable and relaxing stay, and the amenities truly made it feel like a home away from home. The personal touches were thoughtful and greatly appreciated. We wouldn't hesitate to stay here again and highly recommend this property to anyone looking for a convenient, comfortable, and welcoming place to stay!",
             author: "Guest (Reservation #HA-8V7K88)"
         },

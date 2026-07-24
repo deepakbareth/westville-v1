@@ -10,6 +10,10 @@ const Testimonials = () => {
 
     const testimonials = [
         {
+            text: "We can't say enough good things about the place! Loved the private patio and green space, made for lovely evenings with a glass of wine to end the day. The neighborhood is quiet and friendly and it's close to everything. Highly recommend!",
+            author: "Airbnb Guest"
+        },
+        {
             text: "We had a fantastic 7 night stay! The location was perfect and close to everything while still nestled in a charming, quiet neighborhood. The property was easy to access, with convenient parking that made coming and going effortless. The communication before and during the stay was exceptional. The home was beautifully appointed, exceptionally clean, and thoughtfully updated with modern upgrades throughout. It had everything we needed for a comfortable and relaxing stay, and the amenities truly made it feel like a home away from home. The personal touches were thoughtful and greatly appreciated. We wouldn't hesitate to stay here again and highly recommend this property to anyone looking for a convenient, comfortable, and welcoming place to stay!",
             author: "Guest (Reservation #HA-8V7K88)"
         },
@@ -24,10 +28,6 @@ const Testimonials = () => {
         {
             text: "Classic comfort & style We booked a 4-night stay at the Westville over New Year and will most likely do so again. On our arrival day, we had both worked a full day and then had a 3 1/2 hr drive to P-town. I held my breath and hoped that the place I had reserved for our 'special' New Year was going to be OK. We arrived late, it was cold and we were tired. Opening the private entrance to our unit we were both thrilled with our first few steps inside. The Westville was everything that Dominic (co-owner) described...and more. Cozy, clean comfortable and welcoming. All the stress of the day melted away. Every attention to detail was made with regard to furnishings and cleanliness. This is not 'just a place to sleep'. The kitchen is accommodating and you will want to make some meals there. (which we did!!!!) From a Lobster and asparagus night to a lazy morning brunch with coffee (great coffee maker) enjoying the paper and the surround sound stereo. I must add that one day we enjoyed the surround sound so much that we just danced for about 4-5 hours. The location is within easy walking distance to everything in P-town; yet not so close to downtown that it would be too noisy in the summer.",
             author: "Kevin and Alice, New Hampshire"
-        },
-        {
-            text: "Great as Usual This was our fourth year in this spot. It was immaculate as usual and full of the amenities we've become accustomed to! We wouldn't stay anywhere else. It is perfect for two people. We cooked many of our meals here, yet had ready access to a number of great restaurants. It is located near everything yet far enough to be quiet and serene even on busy Memorial Day. Dominic and Paul are great hosts and attentive but not at all intrusive. We respect them and their home, they respect us. We'll be back again next year.",
-            author: "Barb, Susan and Jenny the Dog, Oxford Ohio"
         }
     ];
 
