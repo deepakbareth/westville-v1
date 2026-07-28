@@ -121,7 +121,7 @@ const HotelAccessibility = () => {
                         style={{ filter: 'invert(69%) sepia(85%) saturate(450%) hue-rotate(350deg)' }}
                     />
                     <span className="text-lg sm:text-xl md:text-2xl font-helvetica text-gray-800 tracking-wide font-normal">
-                        Hotel Accessibility
+                        Westville Cottage Vacation Rental Accessibility
                     </span>
                 </div>
                 {isOpen ? (
